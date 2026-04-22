@@ -1,29 +1,31 @@
 {
   "id": "3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
   "revision": 0,
-  "last_node_id": 62,
-  "last_link_id": 47,
+  "last_node_id": 64,
+  "last_link_id": 49,
   "nodes": [
     {
-      "id": 52,
+      "id": 64,
       "type": "SaveImage",
       "pos": [
-        3694.12548828125,
-        130.8205108642578
+        3517.62158203125,
+        149.09194946289062
       ],
       "size": [
-        288.1275329589844,
-        426.6260070800781
+        278.6650390625,
+        270
       ],
-      "flags": {},
+      "flags": {
+        "collapsed": false
+      },
       "order": 3,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "label": "images",
           "name": "images",
           "type": "IMAGE",
-          "link": 30
+          "link": 49
         },
         {
           "label": "filename_prefix",
@@ -47,7 +49,9 @@
       },
       "widgets_values": [
         "ComfyUI"
-      ]
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 30,
@@ -166,7 +170,7 @@
           "name": "response",
           "type": "STRING",
           "links": [
-            28
+            48
           ]
         }
       ],
@@ -175,15 +179,181 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "GLM-4.6V",
+        "gemini-3.1-pro-preview",
         "这是一个为你定制的**系统提示词（System Prompt）**。你可以将这段指令发送给ChatGPT或Claude，让它化身为你的“美术总监”，根据你提供的剧本段落自动生成高质量的绘画提示词（适用于Midjourney, Stable Diffusion等）。\n\n---\n\n### 系统提示词指令 (复制以下内容)\n\n```markdown\n# Role: 资深电影美术总监 (Art Director)\n\n## Profile\n你是一位拥有20年经验的历史题材电影美术总监，专精于场景记录电影 的画面表现。你擅长通过光影、材质和大气效果传达宏大的叙事感。\n\n## Task\n根据用户提供的【剧本描述】，编写一段用于AI绘画（如Midjourney）的详细场景设计提示词。\n\n## Style Guidelines\n1.  **核心风格**: 电影场景写实风格, 超写实, 电影级, 史诗级风景纪录片风格（华丽、细腻、高动态范围）。\n2.  **画面质感**: 8K分辨率, 光线追踪(Ray Tracing), 体积光(Volumetric Lighting), 极其详细的纹理(Hyper-detailed textures)。\n3.  **构图**: 广角镜头或全景视图，强调场景的宏大与纵深。\n\n## Constraints (必须遵守)\n1.  **绝对禁止出现人物**: 场景必须是空镜，没有人、角色或生物。重点在于环境本身。\n2.  **语言**: 输出的提示词主要为英文（AI绘图通用），并附带中文结构说明。\n\n## Workflow & Output Format\n请分析剧本，按以下结构生成提示词：\n\n**1. 场景分析 (中文)**\n简要分析剧本中的核心视觉元素。\n\n**2. 最终提示词 (英文)**\n请按照以下公式组合关键词：\n`[全景主场景描述] + [地面与细节] + [天空与天气] + [光线与氛围] + [渲染与风格参数] + --no people characters humans`\n\n*   **全景描述**: 宏观描述场景结构、建筑或自然景观。\n*   **地面描述**: 植被、材质（湿润的石头、金属地板等）、反射。\n*   **天空描述**: 云层形态、星空、天色。\n*   **光线描述**: 时间（日/夜）、光源位置、丁达尔效应、辉光。\n*   **大气描述**: 雾气、尘埃粒子、空气透视感。\n*   **风格参数**: Unreal Engine 5, Octane Render, Final Fantasy Style, Cinematic, 8k, Masterpiece.\n\n---\n**请等待用户输入剧本片段。**\n```\n\n---\n\n### 使用示例\n\n**用户输入剧本：**\n> “这是一座悬浮在空中的古老神殿遗迹，周围环绕着破碎的浮石。时间是黄昏，夕阳将云层染成血红色，神殿的断壁残垣上刻着发光的蓝色符文，空气中漂浮着金色的魔法尘埃。”\n\n**AI（美术总监）输出：**\n\n**1. 场景分析**\n*   **主体**: 悬浮的古老神殿遗迹，破碎浮石。\n*   **风格**: 史诗感，神秘，魔法与科技结合（FF风格）。\n*   **时间**: 黄昏（Magic Hour）。\n*   **氛围**: 红色夕阳与蓝色符文的冷暖对比，金色尘埃增加神性。\n\n**2. 最终提示词**\n> **Panoramic view of an ancient floating temple ruins hovering in the sky, surrounded by shattered floating rocks and debris, massive broken stone pillars with glowing blue ancient runes, intricate carvings, hyper-realistic rock textures.**\n>\n> **Ground consists of fragmented floating platforms, mossy stone surfaces reflecting the light.**\n>\n> **Sky is filled with dramatic cumulus clouds dyed blood-red by the setting sun, vast horizon, twilight.**\n>\n> **Lighting features cinematic sunset lighting, contrasting with the cold blue glow of the runes, golden magical dust particles floating in the air, volumetric fog, god rays.**\n>\n>  8k resolution, hyper-detailed, epic scale, cinematic composition, masterpiece.**\n>\n> **--no people characters humans living beings**",
         "Hello",
         0.6,
-        2125943658,
+        1866406257,
         "randomize"
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 63,
+      "type": "RH_Nano_Banana2_Gemini31Flash",
+      "pos": [
+        3050.774169921875,
+        131.35128784179688
+      ],
+      "size": [
+        374.6089782714844,
+        595
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image5",
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image6",
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image7",
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image8",
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image9",
+          "name": "image9",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 48
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "label": "aspectRatio",
+          "name": "aspectRatio",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "aspectRatio"
+          }
+        },
+        {
+          "label": "resolution",
+          "name": "resolution",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          }
+        },
+        {
+          "label": "skip_error",
+          "name": "skip_error",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "skip_error"
+          }
+        },
+        {
+          "label": "channel",
+          "name": "channel",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "channel"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            49
+          ]
+        },
+        {
+          "label": "image_url",
+          "name": "image_url",
+          "type": "STRING"
+        },
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_Nano_Banana2_Gemini31Flash",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        801142849,
+        "randomize",
+        "9:16",
+        "2k",
+        false,
+        "Third-party"
+      ]
     },
     {
       "id": 48,
@@ -230,160 +400,8 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        ""
+        "### 【场景1_创投峰会后台杂物区】\n- **【时空设定】**：内景，日，封闭空间（无自然光）\n- **【氛围基调】**：杂乱逼仄、市井廉价、与前台的奢华形成强烈反差\n- **【纯景视觉描述】**：\n  狭窄的后台通道，斑驳的水泥地面上散落着几张皱巴巴的小面额纸币。画面一侧，一堆破旧、边角凹陷的瓦楞纸箱摇摇欲坠地堆叠在生锈的金属推车旁。头顶是一盏接触不良的冷白色日光灯，灯光微弱且闪烁，将纸箱的阴影拉得扭曲而杂乱。地面上静静躺着一根黑色的安保橡胶警棍。空气中弥漫着细微的灰尘，一束从前台会场门缝漏进来的暖色射灯光束如同利剑般切开昏暗的后台，形成明显的丁达尔光效，照亮了半空中的浮尘与地上的零钞。"
       ]
-    },
-    {
-      "id": 61,
-      "type": "PreviewImage",
-      "pos": [
-        3705.97216796875,
-        623.3101806640625
-      ],
-      "size": [
-        142.376953125,
-        246.00003051757812
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 4,
-      "inputs": [
-        {
-          "label": "images",
-          "name": "images",
-          "type": "IMAGE",
-          "link": 39
-        }
-      ],
-      "outputs": [
-        {
-          "label": "image_urls",
-          "name": "image_urls",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 50,
-      "type": "RH_Nano_Banana_Image2Image",
-      "pos": [
-        3036.638671875,
-        128.62022399902344
-      ],
-      "size": [
-        590.3171997070312,
-        505.74566650390625
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 4,
-      "inputs": [
-        {
-          "label": "images",
-          "name": "images",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image1",
-          "name": "image1",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image2",
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image3",
-          "name": "image3",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image4",
-          "name": "image4",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "prompt",
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 28
-        },
-        {
-          "label": "seed",
-          "name": "seed",
-          "shape": 7,
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          }
-        },
-        {
-          "label": "aspectRatio",
-          "name": "aspectRatio",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "aspectRatio"
-          }
-        },
-        {
-          "label": "skip_error",
-          "name": "skip_error",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "skip_error"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            30,
-            39
-          ]
-        },
-        {
-          "label": "image_url",
-          "name": "image_url",
-          "type": "STRING"
-        },
-        {
-          "label": "response",
-          "name": "response",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RH_Nano_Banana_Image2Image",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "",
-        26791354,
-        "randomize",
-        "auto",
-        false
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -396,26 +414,18 @@
       "STRING"
     ],
     [
-      28,
+      48,
       30,
       0,
-      50,
-      5,
+      63,
+      10,
       "STRING"
     ],
     [
-      30,
-      50,
+      49,
+      63,
       0,
-      52,
-      0,
-      "IMAGE"
-    ],
-    [
-      39,
-      50,
-      0,
-      61,
+      64,
       0,
       "IMAGE"
     ]
@@ -450,10 +460,10 @@
     "VHS_latentpreview": false,
     "frontendVersion": "1.23.0",
     "ds": {
-      "scale": 0.2540132685242,
+      "scale": 0.8769226950000019,
       "offset": [
-        -182.65201076634827,
-        954.0113605914969
+        -1765.6067505346805,
+        219.75253062786405
       ]
     }
   },

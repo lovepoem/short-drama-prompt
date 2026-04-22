@@ -1,291 +1,9 @@
 {
   "id": "3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
   "revision": 0,
-  "last_node_id": 62,
-  "last_link_id": 48,
+  "last_node_id": 63,
+  "last_link_id": 49,
   "nodes": [
-    {
-      "id": 58,
-      "type": "LoadImage",
-      "pos": [
-        3720.45361328125,
-        -2671.64453125
-      ],
-      "size": [
-        299.0271301269531,
-        424.9251403808594
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "COMBO",
-          "widget": {
-            "name": "image"
-          }
-        },
-        {
-          "label": "upload",
-          "name": "upload",
-          "type": "IMAGEUPLOAD",
-          "widget": {
-            "name": "upload"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "IMAGE",
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            35
-          ]
-        },
-        {
-          "label": "MASK",
-          "name": "MASK",
-          "type": "MASK"
-        }
-      ],
-      "title": "角色一",
-      "properties": {
-        "Node name for S&R": "LoadImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "e4cbe96d5674ad54d6c2592f8e0895a52e6e17e454bb4e236826d9c971cd60fc.png",
-        "image"
-      ]
-    },
-    {
-      "id": 55,
-      "type": "LoadImage",
-      "pos": [
-        4036.044189453125,
-        -2681.266357421875
-      ],
-      "size": [
-        299.0271301269531,
-        424.9251403808594
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "COMBO",
-          "widget": {
-            "name": "image"
-          }
-        },
-        {
-          "label": "upload",
-          "name": "upload",
-          "type": "IMAGEUPLOAD",
-          "widget": {
-            "name": "upload"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "IMAGE",
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            36
-          ]
-        },
-        {
-          "label": "MASK",
-          "name": "MASK",
-          "type": "MASK"
-        }
-      ],
-      "title": "角色二",
-      "properties": {
-        "Node name for S&R": "LoadImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "e4cbe96d5674ad54d6c2592f8e0895a52e6e17e454bb4e236826d9c971cd60fc.png",
-        "image"
-      ]
-    },
-    {
-      "id": 59,
-      "type": "LoadImage",
-      "pos": [
-        4350.4072265625,
-        -2680.826171875
-      ],
-      "size": [
-        299.0271301269531,
-        424.9251403808594
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "COMBO",
-          "widget": {
-            "name": "image"
-          }
-        },
-        {
-          "label": "upload",
-          "name": "upload",
-          "type": "IMAGEUPLOAD",
-          "widget": {
-            "name": "upload"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "IMAGE",
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            37
-          ]
-        },
-        {
-          "label": "MASK",
-          "name": "MASK",
-          "type": "MASK"
-        }
-      ],
-      "title": "场景一",
-      "properties": {
-        "Node name for S&R": "LoadImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "e4cbe96d5674ad54d6c2592f8e0895a52e6e17e454bb4e236826d9c971cd60fc.png",
-        "image"
-      ]
-    },
-    {
-      "id": 56,
-      "type": "SaveVideo",
-      "pos": [
-        5150.14794921875,
-        -2562.3935546875
-      ],
-      "size": [
-        774.3869018554688,
-        1524.6878662109375
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "video",
-          "name": "video",
-          "type": "VIDEO",
-          "link": 31
-        },
-        {
-          "label": "filename_prefix",
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          }
-        },
-        {
-          "label": "format",
-          "name": "format",
-          "type": "COMBO",
-          "widget": {
-            "name": "format"
-          }
-        },
-        {
-          "label": "codec",
-          "name": "codec",
-          "type": "COMBO",
-          "widget": {
-            "name": "codec"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "video_url",
-          "name": "video_url",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveVideo",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "video/ComfyUI",
-        "auto",
-        "auto"
-      ]
-    },
-    {
-      "id": 57,
-      "type": "CR Text",
-      "pos": [
-        3602.545654296875,
-        -1993.92431640625
-      ],
-      "size": [
-        480.03338623046875,
-        456.4563903808594
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "*",
-          "links": [
-            32
-          ]
-        },
-        {
-          "label": "show_help",
-          "name": "show_help",
-          "type": "STRING"
-        }
-      ],
-      "title": "网文原稿",
-      "properties": {
-        "Node name for S&R": "CR Text",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        ""
-      ]
-    },
     {
       "id": 53,
       "type": "RH_RhartVideoSparkvideo20MultimodalVideo",
@@ -298,7 +16,7 @@
         624
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -338,7 +56,7 @@
           "name": "image6",
           "shape": 7,
           "type": "IMAGE",
-          "link": 37
+          "link": null
         },
         {
           "label": "image7",
@@ -517,13 +235,127 @@
         true,
         "9:16",
         false,
-        2147483635,
+        2147483634,
         "decrement",
         true,
         "all"
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 58,
+      "type": "LoadImage",
+      "pos": [
+        3720.45361328125,
+        -2671.64453125
+      ],
+      "size": [
+        299.0271301269531,
+        424.9251403808594
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "label": "upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            35
+          ]
+        },
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "title": "角色一",
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "45cc44b4032ee65328328ff26be46588e166dd35c88052889cdb3eb2cb8604ef.png",
+        "image"
+      ]
+    },
+    {
+      "id": 55,
+      "type": "LoadImage",
+      "pos": [
+        4069.526123046875,
+        -2521.381591796875
+      ],
+      "size": [
+        299.0271301269531,
+        424.9251403808594
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "label": "upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            36
+          ]
+        },
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "title": "角色二",
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "9ee19562a29c9eebe2496eac4960556624d3f138cb9f5d4205dbaa2c6e51e888.png",
+        "image"
+      ]
     },
     {
       "id": 32,
@@ -537,7 +369,7 @@
         698.45849609375
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
@@ -642,7 +474,8 @@
           "name": "response",
           "type": "STRING",
           "links": [
-            40
+            40,
+            49
           ]
         }
       ],
@@ -655,11 +488,177 @@
         "系统提示词\n\n# Role: AI视频大模型提示词专家 (Video Prompt Engineer)\n\n# Task: \n将提供的【分镜脚本】结合已有的【角色图片列表】和【场景图片列表】信息，转化为可直接输入AI视频生成工具（如图生视频模型）的纯英文视频提示词（Video Prompt）。\n\n# Guidelines:\n1. 镜头语言转译：将分镜中的中文景别和运镜（如：推镜头、全景、特写）准确翻译为专业的英文摄影术语（如：Zoom in, Close-up shot, Panning, Tracking shot, Dolly back）。\n2. 聚焦动态描述：因为是图生视频，不需要再长篇大论描述角色的长相（图片已提供）。提示词必须重点描述“画面中正在发生的主体微小动作”或“环境的动态变化”（例如：A man's hand swirling red wine in a glass / Lightning flashing outside the window / Lips moving slightly）。\n3. 规避复杂动作：避免生成连贯的复杂武打或大幅度转身，将动作拆解为局部的物理变化。\n4. 光影与质感增强：在每段提示词末尾加上标准的电影级质感后缀（Cinematic lighting, volumetric fog, hyper-realistic, 8k resolution, film grain）。\n\n# Output Format:\n请按分镜编号逐一输出，仅输出英文提示词，格式需符合公式：\n[镜头景别与运镜] + [画面主体与动态描述] + [环境与光影效果] + [风格后缀参数]\n\n示例格式：\n【镜头 01】\nZoom in, Close-up shot of a vintage brick house door. Sunlight shining on the walls. Cinematic lighting, peaceful atmosphere, hyper-realistic, 8k, masterpiece.\n\n【镜头 03】\nClose-up shot. A man's hand holding a wine glass, slowly swirling the red wine. Dim top lighting, luxurious wooden table, highly detailed, photorealistic.",
         "Hello",
         0.6,
-        421811368,
+        1881915182,
         "randomize"
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 63,
+      "type": "easy saveText",
+      "pos": [
+        4689.455078125,
+        -1838.5675048828125
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "link": 49
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING"
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE"
+        }
+      ],
+      "title": "保存单镜头剧本",
+      "properties": {
+        "widget_ue_connectable": {},
+        "Node name for S&R": "easy saveText"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "txt",
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 56,
+      "type": "SaveVideo",
+      "pos": [
+        5150.14794921875,
+        -2562.3935546875
+      ],
+      "size": [
+        774.3869018554688,
+        1524.6878662109375
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "link": 31
+        },
+        {
+          "label": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "label": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "label": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "video_url",
+          "name": "video_url",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "CR Text",
+      "pos": [
+        3602.545654296875,
+        -1993.92431640625
+      ],
+      "size": [
+        480.03338623046875,
+        456.4563903808594
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "*",
+          "links": [
+            32
+          ]
+        },
+        {
+          "label": "show_help",
+          "name": "show_help",
+          "type": "STRING"
+        }
+      ],
+      "title": "网文原稿",
+      "properties": {
+        "Node name for S&R": "CR Text",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "[镜头 02]\n- 场景：创投峰会后台 走廊\n- 角色：江驰\n- 画面：【近景】镜头上摇至江驰的脸，他叹了口气。突然，他眼前弹出一块散发着幽蓝色光芒的全息面板，上面写着“暗爽打脸系统”。\n- 镜头类型 &景别 & 运镜：[CU] 反应镜头/近景/上摇\n- 音效：系统启动的“滴”声。\n- 江驰OS：在这个灵气复苏、人均修仙的时代，我唯一的金手指，就是这个系统……\n- 时长：3秒"
+      ]
     }
   ],
   "links": [
@@ -696,19 +695,19 @@
       "IMAGE"
     ],
     [
-      37,
-      59,
-      0,
-      53,
-      5,
-      "IMAGE"
-    ],
-    [
       40,
       32,
       0,
       53,
       17,
+      "STRING"
+    ],
+    [
+      49,
+      32,
+      0,
+      63,
+      0,
       "STRING"
     ]
   ],
@@ -742,10 +741,10 @@
     "VHS_latentpreview": false,
     "frontendVersion": "1.23.0",
     "ds": {
-      "scale": 0.25937424601000014,
+      "scale": 1.1918176537727232,
       "offset": [
-        -2214.350013300378,
-        3416.076875650492
+        -3449.44041303886,
+        2131.4994088139274
       ]
     }
   },
