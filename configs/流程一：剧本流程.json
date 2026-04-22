@@ -1,0 +1,1090 @@
+{
+  "id": "3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
+  "revision": 0,
+  "last_node_id": 62,
+  "last_link_id": 41,
+  "nodes": [
+    {
+      "id": 35,
+      "type": "easy saveText",
+      "pos": [
+        -470.35772705078125,
+        -504.307861328125
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "link": 17
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "output_file_path",
+          "name": "output_file_path",
+          "type": "STRING",
+          "widget": {
+            "name": "output_file_path"
+          }
+        },
+        {
+          "label": "file_name",
+          "name": "file_name",
+          "type": "STRING",
+          "widget": {
+            "name": "file_name"
+          }
+        },
+        {
+          "label": "file_extension",
+          "name": "file_extension",
+          "type": "COMBO",
+          "widget": {
+            "name": "file_extension"
+          }
+        },
+        {
+          "label": "overwrite",
+          "name": "overwrite",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "overwrite"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING"
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE"
+        }
+      ],
+      "title": "保存总剧本",
+      "properties": {
+        "Node name for S&R": "easy saveText",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        "",
+        "txt",
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 28,
+      "type": "RH_LLMAPI_Pro_Node",
+      "pos": [
+        -64.2040786743164,
+        -72.82560729980469
+      ],
+      "size": [
+        370.2359313964844,
+        698.45849609375
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "image5",
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image6",
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image7",
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image8",
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "label": "role",
+          "name": "role",
+          "type": "STRING",
+          "widget": {
+            "name": "role"
+          }
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 12
+        },
+        {
+          "label": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          }
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_LLMAPI_Pro_Node",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "GLM-4.6V",
+        "系统提示词：\n# Role: 资深影视美术指导与堪景专家\n\n# Task: \n根据提供的短剧剧本，梳理出所有独立的物理场景，并生成极具画面感和光影细节的场景描述，为后续的AI空镜背景生成提供基底。\n\n# Guidelines:\n1. 场景合并去重：将同一物理空间的戏份归并为一个场景词条，按剧本出现顺序排列。\n2. 氛围与光影强化：根据剧本发生的时间（日/夜）、天气（暴雨/晴天）以及剧情情绪（压抑/轻松），提炼或补充场景的光影与氛围（如：昏暗的顶灯、壁炉跳动的火光、赛博朋克霓虹灯、丁达尔光效）。\n3. 关键道具与陈设：提取剧本中明确提到的核心道具并固定其位置（如：高档木质欧洲风格的大桌子上放着雪茄盒、墙上的星条旗）。\n4. 绝对排除人物：场景描述必须是纯粹的“空镜”描述，绝对不能包含任何人物角色或生物。\n\n\n# Output Format:\n请以列表形式输出，每个场景包含以下字段：\n- 【场景编号与名称】：（如：场景1_高档西餐厅内景）\n- 【时空设定】：（内景/外景，日/夜，天气情况）\n- 【氛围基调】：（如：静谧安详、压抑沉闷、剑拔弩张）\n- 【纯景视觉描述】：（包含建筑结构、核心道具布置、材质质感、光影效果的详细描述，不少于50字）",
+        "Hello",
+        0.6,
+        38276334,
+        "randomize"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 31,
+      "type": "RH_LLMAPI_Pro_Node",
+      "pos": [
+        -53.5647087097168,
+        -2461.689697265625
+      ],
+      "size": [
+        370.2359313964844,
+        698.45849609375
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "image5",
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image6",
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image7",
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image8",
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "label": "role",
+          "name": "role",
+          "type": "STRING",
+          "widget": {
+            "name": "role"
+          }
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 15
+        },
+        {
+          "label": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          }
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_LLMAPI_Pro_Node",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "gemini-3.1-pro-preview",
+        "系统提示词 (System Prompt)\n\n角色设定：\n你是一位拥有丰富经验的电影分镜师和导演。擅长将文字剧本转化为极具画面感、节奏感和可执行性的分镜脚本。你能够敏锐地捕捉剧本中的动作细节、情绪变化和视觉奇观，并将其拆解为具体的镜头语言。\n\n任务目标：\n根据用户提供的剧本，将其改编为标准的分镜脚本表格格式，不忽略任何细节和镜头。整个片长约150秒\n\n改编核心原则（必须遵守）：\n\n1. 动作拆解（Action Breakdown）： 剧本中的一段长描述（如“一系列复杂的打斗”或“环境变化”）不能只用一个镜头概括。必须拆解为多个连续的动作镜头（如：特写手部动作 -> 反应镜头 -> 全景环境变化）。\n2. 声画对位（Audio-Visual Sync）：\n- 口型同步： 角色在画面中说话时，台词需对应具体镜头。\n- 画外音/内心独白（VO/OS）： 当台词较长（如内心吐槽、背景介绍）时，画面不能静止不动。必须根据台词内容补充相应的画面（如：闪回、回忆混剪、空镜、动作细节），使画面内容丰富，避免“大头娃娃说相声”。\n3. 视觉化增强（Visualization）： 将剧本中抽象的描述（如“恐怖的道韵神光”）转化为具体的视觉元素（如“空气泛起金色涟漪”、“落叶定格半空”）。\n4. 节奏控制（Pacing）：\n- 首尾帧拆分： 对于变化剧烈的场景（如从静止到爆发），可以拆分为3A（首帧状态）、3B（尾帧/变化后状态）来强调视觉冲击力。\n- 时长预估： 根据动作复杂度和台词长度，给出合理的镜头时长（秒）。\n  \n\n- 输入剧本：\n1-1 武馆小院（日/外）\n【特写易枫的手掌缓缓推出。随着他的动作，周围空气产生肉眼可见的金色涟漪...】\n易枫 OS：“穿越三年，系统就教我打铁、画画...全是生活技能！”\n- 输出分镜逻辑（学习点）：\n  - 将“手掌推出”到“神光笼罩”拆解为：特写手 -> 空气涟漪 -> 落叶定格(首帧) -> 院子全景(尾帧)。\n  - 当易枫 OS 吐槽穿越生活时，画面没有停留在易枫脸上，而是插入了（闪回/混剪）打铁、画画的画面，实现了声画对位的丰富性。\n    \n输出格式 ：\n\n[镜头 01]\n- 场景：客厅 楼梯口\n- 角色：陈阳 苏樱\n- 画面： 【特写/闪回】（风格突变，色调压抑昏黄）残阳如血，染红了断裂的山峰。\n- 镜头类型  &景别 & 运镜：[EST] 交代镜头 /空镜头/固定\n- 音效： 沉闷的风声。\n- 时长：1.5秒\n  \n[镜头 02]\n- 场景：客厅 楼梯口\n- 角色：陈阳 苏樱\n- 画面： 【特写/局部】一只布满鳞甲的巨足重重踏下，枯林瞬间化为齑粉。\n- 镜头类型  &景别 & 运镜：[ECU] 交代镜头 /特写/晃动\n- 音效： 巨响、树木断裂声。\n- 时长：1.5秒\n  \n[镜头 03]\n- 场景：客厅 楼梯口\n- 角色：陈阳 苏樱\n- 画面： 【特写】尹洛璃的小手拉住洛兰雪的衣袖，用力晃了晃。\n- 镜头类型  &景别 & 运镜： [INS] 插入镜头/特写/跟拍\n- 尹洛璃：（祈求） 姐姐，我想买一本！\n- 时长：2秒\n  \n[镜头 04]\n- 场景：客厅 楼梯口\n- 角色：陈阳 苏樱\n- 画面： 【中景】洛兰雪看着尹洛璃痴迷的样子，眉头紧锁，眼神中透着焦虑。\n- 镜头类型  &景别 & 运镜： [OTS] 过肩镜头/中景/推镜头\n- 洛兰雪OS：（解释道） 师尊半月后 与 玄武宗老祖对战，胜算才两成...\n- 时长：4秒\n  \n分镜输出严格按输出格式执行\n",
+        "Hello",
+        0.6,
+        634228944,
+        "randomize"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 26,
+      "type": "RH_LLMAPI_Pro_Node",
+      "pos": [
+        -942.9984741210938,
+        -818.7998046875
+      ],
+      "size": [
+        370.2359313964844,
+        698.45849609375
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "image5",
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image6",
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image7",
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image8",
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "label": "role",
+          "name": "role",
+          "type": "STRING",
+          "widget": {
+            "name": "role"
+          }
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 10
+        },
+        {
+          "label": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          }
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            11,
+            12,
+            15,
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_LLMAPI_Pro_Node",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "gemini-3.1-pro-preview",
+        "系统提示词 (System Prompt)\n1 角色定义：\n你是一位拥有深厚网文改编经验的短剧金牌编剧。你擅长将长篇网络小说提炼为快节奏、高爽点、强冲突的竖屏短剧剧本。\n\n2 任务目标：\n将用户提供的网络小说片段改编为一集标准的短剧剧本。\n\n3 基本参数约束：\n1. 时长控制： 单集时长严格控制在 2-3分钟 左右。\n2. 字数控制： 总字数（含动作、对话、旁白）控制在 1000字 左右（约500字/分钟）。\n3. 镜头数量： 每集需包含 50个左右 的镜头（约25个镜头/分钟）。\n  \n【剧本改编核心准则】\n1.\n人设还原：主角必须是“腹黑吐槽王者+极致利己主义者”，台词自带网络感贫嘴属性，内心吐槽需以画外音形式呈现；女主保持“高冷萌娃+暴力输出”设定，少说话多怼人，动作表情自带反差萌（如用软糯语气说狠话）。\n2.\n\n对话要求：① 保留原著经典吐槽台词，新增台词需贴合角色人设，多用“反语境调侃”“生活化吐槽”（如反派放狠话时，主角可吐槽“你这台词是不是抄的”）；② 对话节奏紧凑，避免冗长抒情，每段对话至少包含1个笑点或1个情绪冲突；③ 强化角色口头禅，主角的“苟住，别浪”“暗爽打脸值get”，女主的“哦”“垃圾”“主角你是不是傻”需自然融入剧情。\n3.\n\n剧情结构：每集时长控制在10-15分钟（适配竖屏短剧节奏），单集遵循“3秒钩子→日常搞笑铺垫→冲突升级→爆点爆发→结尾钩子”的逻辑：① 3秒钩子：开篇用强反差场景抓住观众（如主角在危险中还在算积分，女主暴力收拾反派）；② 日常搞笑铺垫：通过主角与女主的互怼、主角的吐槽展现人设，时长不超过3分钟；③ 冲突升级：引入反派/任务危机（如被修行者挑衅、陷入秘境险境），推动剧情发展；④ 爆点爆发：主角利用小聪明/系统能力打脸反派、获得收益，需突出“爽感”（如反派嘲讽主角弱小，主角瞬间反杀并吐槽“让你看不起穷人”）；⑤ 结尾钩子：每集结尾必须留下悬念（如解锁新能力的半成品、突然出现的神秘敌人、未完成的任务目标），引导观众追更。\n4.\n\n爽点设计：围绕“打脸值系统”展开，让主角的搞笑行为与爽点强绑定——主角通过吐槽、膈应人获得暗爽打脸值，兑换能力后反杀反派，形成“搞笑→收益→爽点”的闭环；新增爽点需贴合“利己主义”人设，如主角获得奖励时优先考虑“能不能换钱”“能不能保护女主”，避免强行升华。\n5.\n\n风格把控：整体风格轻松搞笑，玄幻元素为剧情服务，避免晦涩的世界观设定（复杂设定可通过主角的吐槽简化解释，如“灵气复苏就是大家都开始修仙了，简单说就是能打能抗还能赚积分”）；暴力场景需弱化血腥感，强化搞笑感（如女主收拾反派时，可搭配夸张的卡通音效，主角在一旁吐槽“下手轻点，别影响我赚积分”）。\n\n【改编实操细则】\n1.\n场景适配：优先选择生活化场景（出租屋、学校、街边）与玄幻场景（秘境、修行者据点）结合，生活化场景承载搞笑剧情，玄幻场景承载冲突与爆点。\n2.\n\n镜头语言：多用近景展现角色表情（如主角吐槽时的贱兮兮表情、女主高冷怼人的小表情），动作戏采用“快节奏剪辑+夸张特效”，弱化暴力感，强化喜剧效果。\n3.\n\n画外音运用：主角的内心吐槽必须以画外音形式呈现，画外音语气需轻松调侃，与角色台词形成反差（如主角表面点头哈腰，画外音吐槽“这反派智商堪忧，随便忽悠就信了”）。\n4.\n\n禁忌事项：① 禁止弱化主角“利己主义”人设，避免强行让主角当“救世主”；② 禁止对话冗长抒情，所有抒情场景需搭配吐槽消解（如主角保护女主时，可吐槽“也就我能欺负你，别人不行”）；③ 禁止无意义的剧情支线，所有支线必须服务于“人设强化”或“爽点爆发”。\n\n【示例场景参考】\n场景：街边，主角被两个修行者挑衅\n修行者A（嚣张）：小子，识相点把身上的灵气物品交出来，不然废了你！\n主角（表面害怕，后退两步）：大哥别动手，我就是个普通人，没什么值钱的……\n画外音（主角）：完了完了，这俩一看就是新手，气场这么弱还敢出来抢东西？不过正好，让他们生气能赚暗爽打脸值！\n修行者B（不耐烦）：少废话！搜身！\n（女主从主角身后走出，双手抱胸，面无表情）\n女主：垃圾。\n修行者A（怒）：小屁孩找死！\n（修行者A伸手去推女主，女主侧身躲开，一脚踹在修行者A膝盖上，修行者A惨叫倒地）\n主角（立刻后退，举起手机录像）：哎呀，打人啦！修行者欺负小孩啦！大家快来看啊！\n画外音（主角）：暗爽打脸值+100！+80！爽！再来点再来点！\n修行者B（又怒又怕）：你……你们等着！\n（修行者B扶着修行者A逃跑）\n主角（对着逃跑的背影喊）：记得下次来抢东西带点专业装备！比如口罩！不然我把你们照片发网上！\n（主角转身看向女主，递出一根棒棒糖）\n主角：你真棒，奖励你的。刚才那一脚帅呆了，再给我表演一个？\n女主（接过棒棒糖，舔了一口）：主角你是不是傻。\n画外音（主角）：暗爽打脸值+10……行吧，自家妹妹，忍了。不过刚才那俩货应该还会再来，正好再赚一波积分，嘿嘿。\n（镜头转向街角，一个神秘人影盯着主角和女主，嘴角上扬）\n画外音（主角）：嗯？有人盯着我？不会是那俩货的同伙吧？有点意思……\n（黑屏，字幕：下集预告：神秘人身份曝光？主角遭遇首次危机！）\n",
+        "Hello",
+        0.6,
+        290046939,
+        "randomize"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 27,
+      "type": "RH_LLMAPI_Pro_Node",
+      "pos": [
+        -88.97799682617188,
+        -1158.5982666015625
+      ],
+      "size": [
+        370.2359313964844,
+        698.45849609375
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "image5",
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image6",
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image7",
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image8",
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "label": "role",
+          "name": "role",
+          "type": "STRING",
+          "widget": {
+            "name": "role"
+          }
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 11
+        },
+        {
+          "label": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          }
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_LLMAPI_Pro_Node",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "gemini-3.1-pro-preview",
+        "系统提示词：\n# Role: 资深影视选角导演与剧本拆解专家\n\n# Task: \n根据提供的短剧剧本，精准提炼出所有出场角色，并为每个角色生成详细的外貌与人设描述，为后续的AI角色视觉设计提供标准化参数。\n\n# Guidelines:\n1. 角色穷举：不要遗漏任何有台词或对剧情有关键推动作用的角色（包括未出场但被反复提及的关键背景人物）。\n2. 细节提取与脑补：从剧本的对话、旁白和动作中，推断角色的年龄、性别、身份、性格特征。\n3. 视觉化翻译：这是最重要的一步。将抽象的性格转化为具体的视觉元素。重点提取角色的外貌特征（发型、面部特征、体型）和服装配饰（如特定的领带、名表、玉佩等）。如果剧本没有明确提及，请根据人设和背景进行合理推断与脑补（例如：极度利己的霸总可以设定为金丝眼镜、冷厉的下颌线）。\n\n# Output Format:\n请以结构化列表形式输出，每个角色包含以下字段：\n- 【角色名称】\n- 【身份/设定】：（如：总裁、系统宿主、高冷萌娃）\n- 【性格特征】：（如：腹黑、极致利己、傲慢）\n- 【视觉外观描述】：（详细的外貌、发型、妆容、代表性服装，限制在100字以内，要求画面感极强，能够直接作为AI绘画的参考）",
+        "Hello",
+        0.6,
+        1213263028,
+        "randomize"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 46,
+      "type": "easy saveText",
+      "pos": [
+        424.2757568359375,
+        -2187.013671875
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "link": 24
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "output_file_path",
+          "name": "output_file_path",
+          "type": "STRING",
+          "widget": {
+            "name": "output_file_path"
+          }
+        },
+        {
+          "label": "file_name",
+          "name": "file_name",
+          "type": "STRING",
+          "widget": {
+            "name": "file_name"
+          }
+        },
+        {
+          "label": "file_extension",
+          "name": "file_extension",
+          "type": "COMBO",
+          "widget": {
+            "name": "file_extension"
+          }
+        },
+        {
+          "label": "overwrite",
+          "name": "overwrite",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "overwrite"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING"
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE"
+        }
+      ],
+      "title": "保存分镜脚本列表",
+      "properties": {
+        "Node name for S&R": "easy saveText",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        "",
+        "txt",
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 25,
+      "type": "CR Text",
+      "pos": [
+        -1481.7034912109375,
+        -555.1209716796875
+      ],
+      "size": [
+        480.03338623046875,
+        456.4563903808594
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "*",
+          "links": [
+            10
+          ]
+        },
+        {
+          "label": "show_help",
+          "name": "show_help",
+          "type": "STRING"
+        }
+      ],
+      "title": "网文原稿",
+      "properties": {
+        "Node name for S&R": "CR Text",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "第⼀章：45度的邀请\n我叫江驰。在上海，我这种⼈有个专属名词，叫“悬浮层”。\n我今年⼆⼗七岁，毕业于⼀所还不错的985，在⼀家中型咨询公司做项⽬经理。我⻓相普通，家境普通，扔进静安\n寺的地铁⼈潮，三秒钟就会被彻底遗忘。\n我的⽉薪两万，其中⼀万要交给⼀个⼆房东，换取⼀间能看⻅隔壁⼤楼⽔箱的卧室。我买不起这⾥的房⼦，也供不\n起这⾥昂贵的爱情。我唯⼀的资产，是我那点可怜的、⽆处安放的⾃尊，以及⼀种近乎本能的洞察⼒。\n我⼀直在想，传统的上升通道——财富、学历、权⼒——对我这种⼈来说，已经窄得像⼀条发丝。但这个时代很有\n意思，它在关闭⼤⻔时，总会留下⼀条缝隙。\n这条缝隙，就是那些站在⾦字塔顶端的⼥⼈。\n她们有钱，有地位，有杀伐决断的权⼒。她们在会议室⾥谈论上亿的项⽬，她们的名字就是⼀块⾦字招牌。但她们\n也是⼈。她们太忙、太强，以⾄于她们的孤独，也像她们的财富⼀样，浓重到化不开。\n她们的婚姻，⼤都是利益的躯壳。她们的丈夫，要么是更强的联盟者，要么是早已被甩在身后的“前浪”。她们需要\n的，不是⼀个征服者，也不是⼀个依附者。\n她们需要的，是⼀个情绪的出⼝。⼀个能让她们“轻松”的男⼈。\n我第⼀次⻅到苏晚，是在⻩浦江边的⼀场创投峰会上。我只是个⼩⼩的执⾏⽅，负责确保PPT翻⻚时不出错。\n苏晚是那场峰会的压轴嘉宾。“启明资本”的创始⼈，⼀个三⼗九岁的⼥⼈，离过婚，现在单身。她是那种你只会在\n财经杂志封⾯上⻅到的⼈。\n她穿着简洁的⿊⾊套装，指尖涂着猩红。她上台时，全场都安静了。她的声⾳不⾼，但每个字都像钉⼦⼀样，精准\n地钉进你的脑⼦⾥。\n我没听她讲了什么，我⼀直在观察她。\n四⼗五分钟的演讲，她喝了两次⽔，都是冰的。她左⼿按了三次胃部，动作很隐蔽。她对台下笑了五次，但没有⼀\n次笑意抵达眼底。\n她演讲结束，被⼀群⼈簇拥着进了VIP休息室。我的⽼板，⼀个四⼗多岁的男⼈，搓着⼿，想进去敬酒，却被她的\n助理礼貌地挡在了⻔外。\n“苏总累了，需要休息。”那助理像个冰⼭。\n⽼板只能悻悻地退回来，转头骂我：“愣着⼲什么？去看看茶歇准备好了没！”\n我没动。我让侍应⽣给我找了⼀个保温杯，去茶⽔间接了热⽔，晾着。然后，我端着⼀杯⽔，⾛向了VIP休息室。\n“先⽣，您不能进去。”助理果然拦住了我。\n我没看她，我只是平静地说：“苏总的胃不好，她刚喝了两⼝冰⽔，现在⼀定在疼。她需要的不是休息，是⼀杯45\n度的温⽔。”\n助理愣住了。\n我继续说，声⾳不⼤，但⾜够让⾥⾯的⼈听⻅：“她连续⾼强度演讲了四⼗五分钟，喉咙也在充⾎。这杯⽔⾥，我\n没放柠檬，也没放蜂蜜。任何味道都会刺激她。她现在最需要的，就是纯粹的、不烫也不凉的温度。”\n⻔⾥传来⼀个清冷但疲惫的声⾳：“让他进来。”\n助理的脸⾊⽩了⼀下，但还是给我开了⻔。\n休息室⾥只有苏晚⼀个⼈。她脱了⾼跟鞋，⾚着脚，正闭着眼按着太阳⽳。她看起来和台上的⼥王判若两⼈，那是\n⼀种被权⼒包裹的、极度易碎的疲惫。\n我把⽔杯放在她⼿边。\n“你怎么知道？”她没睁眼。\n“我猜的。”我说，“⼀个习惯掌控全局的⼈，只有在身体失控时，才会露出破绽。您在台上按了三次胃，⼀次是在您\n提到‘⻛险对冲’时，那说明您在紧张。”\n她终于睁开了眼。那双眼睛很锐利，像⼿术⼑，仿佛要把我整个⼈剖开。\n“你很有意思。”她端起⽔杯，抿了⼀⼝。温度刚刚好。\n“我叫江驰。Apex咨询的。”我没递名⽚，我知道她不需要。\n“你挺懂⼈⼼的。”她看着我。\n那⼀刻，我笑了。我知道，这不是赞美，⽽是邀请。\n第⼆章：建⽴信任区\n我没有在那晚之后⽴刻联系苏晚。\n我知道，对于她这种⼥⼈，任何急于求成的“吸引”，都会被瞬间归类为“贪婪”。我要做的，不是成为她的猎物，也\n不是成为猎⼈。\n我要成为她的“功能”。\n要上位，不能从“吸引”开始，⽽要从“可靠”开始。\n我必须把⾃⼰打造成⼀个安全、可靠、且⽆害的存在。\n三天后，我给苏晚的助理发了⼀封邮件。标题是《关于“启明资本”在峰会上的品牌情绪复盘》。\n这不是我的⼯作，但我做了。我没谈她的演讲内容，我谈的是“情绪”。\n“苏总，您好。附件是对您此次演讲的情绪分析。\n⼀、您提到‘⼥性领导⼒’时，现场的掌声延迟了0.8秒，这表明听众的认同中夹杂着犹豫。 ⼆、您提到‘退出机\n制’时，前三排有五位投资⼈下意识地摸了⼿机，这是焦虑的表现。 三、现场的薄荷⾹薰过于提神，容易加剧演讲\n者的紧张感。如果下次您出席，建议更换为更温和的⽩茶⾹型。\n祝好。 江驰。”\n这是⼀封滴⽔不漏的邮件。它专业、冷静，并且展示了我最⼤的价值——我能“翻译”情绪。\n当晚⼗⼀点，我接到了⼀个陌⽣号码。\n“江驰。”是苏晚的声⾳，⽐在会场时更沙哑，带着深夜的疲惫。\n“苏总，晚上好。”我让⾃⼰听起来很平静，仿佛早就在等这个电话。\n“你的报告我看过了。”她顿了顿，“⽐我花三⼗万请的公关团队写得好。你说的没错，那个薄荷味，熏得我头疼。”\n“我只是习惯了观察。”\n“你现在……有空吗？”她问。\n我看了看我那间⼗平⽶的卧室，笑了：“随时有空。”\n“我被困在机场了。雷暴，航班取消了。我的助理回去了，司机也堵在了⾼架上。”\n“地址发我。”我没有丝毫犹豫，抓起外套就冲了出去。\n我花了三百块打⻋费，穿过半个上海，赶到虹桥的VVIP休息室。\n苏晚⼀个⼈坐在那⾥，她换下了套装，穿着宽松的T恤和⻓裤，素着脸，看起来⽐实际年龄⼩⼏岁。她⾯前的桌⼦\n上，放着⼀个没打开的三明治。\n“苏总。”我⾛到她⾯前。\n她抬起头，眼神⾥没有了⽩天的锐利，只有⼀种放空的茫然。“你来了。”\n我没问她为什么不让司机等，也没问她为什么不叫个酒店。我知道，她这种⼈，永远在安排别⼈，但当她⾃⼰的节\n奏被打乱时，她会陷⼊⼀种“功能性瘫痪”。\n她需要的，是⼀个能帮她“重启”的⼈。\n我没说话，⾛过去，把她⾯前那个冰冷的三明治拿开，然后从我带来的保温袋⾥，拿出了⼀碗刚买的、还冒着热⽓\n的⽪蛋瘦⾁粥。\n“这么晚了，吃三明治，胃会更难受。”我把勺⼦递给她，“这个点，只有这家店的粥是⽤⾼汤熬的。我让他们没放味\n精。”\n苏晚看着那碗粥，看了⾜⾜⼗秒。\n她接过勺⼦，开始⼀⼝⼀⼝地吃。\n她吃得很慢。那个瞬间，她不是“启明资本”的苏晚，她只是⼀个在深夜⾥，吃到⼀⼝热粥的⼥⼈。\n“你怎么知道我喜欢⽪蛋瘦⾁粥？”她忽然问。\n“我不知道。”我撒了个谎，“我只是觉得，在雷暴天，⼈会下意识地渴望⼀点有‘烟⽕⽓’的安慰。⽽粥，是最没有攻\n击性的⻝物。”\n她吃完了。\n“江驰，”她放下勺⼦，重新抬眼看我，“我的团队，缺⼀个⾸席战略官。”\n这是⼀个陷阱。⼀个甜蜜的陷阱。\n她是在测试我，看我是图她的钱，还是图她的位置。如果我点头，我就会从⼀个“懂她的⼈”，瞬间贬值为⼀个“想往\n上爬的下属”。\n我笑了笑，摇了摇头。\n“苏总，我只是个项⽬经理。我做不来您的CSO。”\n“为什么？”她眯起了眼。\n“因为CSO要懂的是数据和模型。⽽我，”我直视她的眼睛，“我只懂⼈⼼。”\n我看着她眼中的紧绷⼀点点松懈下来，取⽽代之的是⼀种更深的、近乎玩味的兴趣。\n“⽽且，”我收起碗筷，站起身，“您现在需要的不是CSO，您需要的是⼀张床。我刚查了，五公⾥外有家酒店还有套\n房，我已经⽤我的卡帮您订了。⻋在外⾯等。”\n我没有给她拒绝的机会，我拎起她的⾏李箱，转身往外⾛。\n她跟了上来。\n从机场到酒店的路上，她⼀句话都没说，只是靠在后座睡着了。我从后视镜⾥看她，她睡着的样⼦像个孩⼦，眉头\n紧锁，仿佛在梦⾥也在开会。\n把她送到房间⻔⼝，我递上房卡。\n“苏总，好好休息。明天的航班，我已经让前台帮您改签到最早⼀班了。”\n她接过房卡，忽然开⼝：“你不进来坐坐吗？”\n这是第⼆次邀请。⽐第⼀次，更⾚裸。\n我知道，只要我踏进这扇⻔，⼀切都会变得简单。但我更知道，⼀旦关系进⼊“欲望区”，它就离“可替代”不远了。\n我后退了半步，和她保持了⼀个绝对安全的社交距离。\n“苏晚，”我第⼀次没有叫她“苏总”，“你今天太累了。你需要的是睡眠，不是⼀个男⼈。”\n我看到她的瞳孔猛地收缩了⼀下。\n“晚安。”\n我转身离开，⾛进电梯，没有回头。"
+      ]
+    },
+    {
+      "id": 37,
+      "type": "easy saveText",
+      "pos": [
+        365.3648986816406,
+        -991.775390625
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "link": 19
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "output_file_path",
+          "name": "output_file_path",
+          "type": "STRING",
+          "widget": {
+            "name": "output_file_path"
+          }
+        },
+        {
+          "label": "file_name",
+          "name": "file_name",
+          "type": "STRING",
+          "widget": {
+            "name": "file_name"
+          }
+        },
+        {
+          "label": "file_extension",
+          "name": "file_extension",
+          "type": "COMBO",
+          "widget": {
+            "name": "file_extension"
+          }
+        },
+        {
+          "label": "overwrite",
+          "name": "overwrite",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "overwrite"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING"
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE"
+        }
+      ],
+      "title": "保存角色列表",
+      "properties": {
+        "Node name for S&R": "easy saveText",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        "",
+        "txt",
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 38,
+      "type": "easy saveText",
+      "pos": [
+        538.9208984375,
+        278.33721923828125
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "link": 20
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "output_file_path",
+          "name": "output_file_path",
+          "type": "STRING",
+          "widget": {
+            "name": "output_file_path"
+          }
+        },
+        {
+          "label": "file_name",
+          "name": "file_name",
+          "type": "STRING",
+          "widget": {
+            "name": "file_name"
+          }
+        },
+        {
+          "label": "file_extension",
+          "name": "file_extension",
+          "type": "COMBO",
+          "widget": {
+            "name": "file_extension"
+          }
+        },
+        {
+          "label": "overwrite",
+          "name": "overwrite",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "overwrite"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING"
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE"
+        }
+      ],
+      "title": "保存场景列表",
+      "properties": {
+        "Node name for S&R": "easy saveText",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        "",
+        "txt",
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    }
+  ],
+  "links": [
+    [
+      10,
+      25,
+      0,
+      26,
+      11,
+      "STRING"
+    ],
+    [
+      11,
+      26,
+      0,
+      27,
+      11,
+      "STRING"
+    ],
+    [
+      12,
+      26,
+      0,
+      28,
+      11,
+      "STRING"
+    ],
+    [
+      15,
+      26,
+      0,
+      31,
+      11,
+      "STRING"
+    ],
+    [
+      17,
+      26,
+      0,
+      35,
+      0,
+      "STRING"
+    ],
+    [
+      19,
+      27,
+      0,
+      37,
+      0,
+      "STRING"
+    ],
+    [
+      20,
+      28,
+      0,
+      38,
+      0,
+      "STRING"
+    ],
+    [
+      24,
+      31,
+      0,
+      46,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "1、网文转剧本",
+      "bounding": [
+        -1766.9349365234375,
+        -869.0840454101562,
+        769.4222412109375,
+        152.3668670654297
+      ],
+      "color": "#b58b2a",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "2、提炼出角色列表和描述",
+      "bounding": [
+        -185.95689392089844,
+        -1414.52685546875,
+        1162.9400634765625,
+        126.37965393066406
+      ],
+      "color": "#b58b2a",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "3、提炼出场景列表和描述",
+      "bounding": [
+        -85.3395767211914,
+        -317.8385314941406,
+        1162.9400634765625,
+        126.37965393066406
+      ],
+      "color": "#b58b2a",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "6、剧本转分镜脚本",
+      "bounding": [
+        -299.21331787109375,
+        -2767.15869140625,
+        1162.9400634765625,
+        126.37965393066406
+      ],
+      "color": "#b58b2a",
+      "font_size": 100,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "links_added_by_ue": [],
+    "ue_links": [],
+    "VHS_MetadataImage": true,
+    "0246.VERSION": [
+      0,
+      0,
+      4
+    ],
+    "VHS_latentpreviewrate": 0,
+    "VHS_latentpreview": false,
+    "frontendVersion": "1.23.0",
+    "ds": {
+      "scale": 0.6727499949325618,
+      "offset": [
+        1006.3016391412299,
+        659.5702978166873
+      ]
+    }
+  },
+  "version": 0.4
+}

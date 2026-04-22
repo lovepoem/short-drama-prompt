@@ -1,0 +1,753 @@
+{
+  "id": "3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
+  "revision": 0,
+  "last_node_id": 62,
+  "last_link_id": 48,
+  "nodes": [
+    {
+      "id": 58,
+      "type": "LoadImage",
+      "pos": [
+        3720.45361328125,
+        -2671.64453125
+      ],
+      "size": [
+        299.0271301269531,
+        424.9251403808594
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "label": "upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            35
+          ]
+        },
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "title": "角色一",
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "e4cbe96d5674ad54d6c2592f8e0895a52e6e17e454bb4e236826d9c971cd60fc.png",
+        "image"
+      ]
+    },
+    {
+      "id": 55,
+      "type": "LoadImage",
+      "pos": [
+        4036.044189453125,
+        -2681.266357421875
+      ],
+      "size": [
+        299.0271301269531,
+        424.9251403808594
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "label": "upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            36
+          ]
+        },
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "title": "角色二",
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "e4cbe96d5674ad54d6c2592f8e0895a52e6e17e454bb4e236826d9c971cd60fc.png",
+        "image"
+      ]
+    },
+    {
+      "id": 59,
+      "type": "LoadImage",
+      "pos": [
+        4350.4072265625,
+        -2680.826171875
+      ],
+      "size": [
+        299.0271301269531,
+        424.9251403808594
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "label": "upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            37
+          ]
+        },
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "title": "场景一",
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "e4cbe96d5674ad54d6c2592f8e0895a52e6e17e454bb4e236826d9c971cd60fc.png",
+        "image"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "SaveVideo",
+      "pos": [
+        5150.14794921875,
+        -2562.3935546875
+      ],
+      "size": [
+        774.3869018554688,
+        1524.6878662109375
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "link": 31
+        },
+        {
+          "label": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "label": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "label": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "video_url",
+          "name": "video_url",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "CR Text",
+      "pos": [
+        3602.545654296875,
+        -1993.92431640625
+      ],
+      "size": [
+        480.03338623046875,
+        456.4563903808594
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "*",
+          "links": [
+            32
+          ]
+        },
+        {
+          "label": "show_help",
+          "name": "show_help",
+          "type": "STRING"
+        }
+      ],
+      "title": "网文原稿",
+      "properties": {
+        "Node name for S&R": "CR Text",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 53,
+      "type": "RH_RhartVideoSparkvideo20MultimodalVideo",
+      "pos": [
+        4688.37451171875,
+        -2559.811279296875
+      ],
+      "size": [
+        400,
+        624
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 35
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 36
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image5",
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image6",
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 37
+        },
+        {
+          "label": "image7",
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image8",
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image9",
+          "name": "image9",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video1",
+          "name": "video1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "video2",
+          "name": "video2",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "video3",
+          "name": "video3",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "audio1",
+          "name": "audio1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "audio2",
+          "name": "audio2",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "audio3",
+          "name": "audio3",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "asset_ids",
+          "name": "asset_ids",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "label": "api_config",
+          "name": "api_config",
+          "shape": 7,
+          "type": "RH_OPENAPI_CONFIG"
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 40
+        },
+        {
+          "label": "resolution",
+          "name": "resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          }
+        },
+        {
+          "label": "duration",
+          "name": "duration",
+          "type": "COMBO",
+          "widget": {
+            "name": "duration"
+          }
+        },
+        {
+          "label": "generateAudio",
+          "name": "generateAudio",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "generateAudio"
+          }
+        },
+        {
+          "label": "ratio",
+          "name": "ratio",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "ratio"
+          }
+        },
+        {
+          "label": "skip_error",
+          "name": "skip_error",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "skip_error"
+          }
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "label": "real_person_mode",
+          "name": "real_person_mode",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "real_person_mode"
+          }
+        },
+        {
+          "label": "conversion_slots",
+          "name": "conversion_slots",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "conversion_slots"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            31
+          ]
+        },
+        {
+          "label": "url",
+          "name": "url",
+          "type": "STRING"
+        },
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_RhartVideoSparkvideo20MultimodalVideo",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        "720p",
+        "5",
+        true,
+        "9:16",
+        false,
+        2147483635,
+        "decrement",
+        true,
+        "all"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 32,
+      "type": "RH_LLMAPI_Pro_Node",
+      "pos": [
+        4172.66796875,
+        -1994.4217529296875
+      ],
+      "size": [
+        370.2359313964844,
+        698.45849609375
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "image5",
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image6",
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image7",
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image8",
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "label": "role",
+          "name": "role",
+          "type": "STRING",
+          "widget": {
+            "name": "role"
+          }
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 32
+        },
+        {
+          "label": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          }
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            40
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_LLMAPI_Pro_Node",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "gemini-3.1-pro-preview",
+        "系统提示词\n\n# Role: AI视频大模型提示词专家 (Video Prompt Engineer)\n\n# Task: \n将提供的【分镜脚本】结合已有的【角色图片列表】和【场景图片列表】信息，转化为可直接输入AI视频生成工具（如图生视频模型）的纯英文视频提示词（Video Prompt）。\n\n# Guidelines:\n1. 镜头语言转译：将分镜中的中文景别和运镜（如：推镜头、全景、特写）准确翻译为专业的英文摄影术语（如：Zoom in, Close-up shot, Panning, Tracking shot, Dolly back）。\n2. 聚焦动态描述：因为是图生视频，不需要再长篇大论描述角色的长相（图片已提供）。提示词必须重点描述“画面中正在发生的主体微小动作”或“环境的动态变化”（例如：A man's hand swirling red wine in a glass / Lightning flashing outside the window / Lips moving slightly）。\n3. 规避复杂动作：避免生成连贯的复杂武打或大幅度转身，将动作拆解为局部的物理变化。\n4. 光影与质感增强：在每段提示词末尾加上标准的电影级质感后缀（Cinematic lighting, volumetric fog, hyper-realistic, 8k resolution, film grain）。\n\n# Output Format:\n请按分镜编号逐一输出，仅输出英文提示词，格式需符合公式：\n[镜头景别与运镜] + [画面主体与动态描述] + [环境与光影效果] + [风格后缀参数]\n\n示例格式：\n【镜头 01】\nZoom in, Close-up shot of a vintage brick house door. Sunlight shining on the walls. Cinematic lighting, peaceful atmosphere, hyper-realistic, 8k, masterpiece.\n\n【镜头 03】\nClose-up shot. A man's hand holding a wine glass, slowly swirling the red wine. Dim top lighting, luxurious wooden table, highly detailed, photorealistic.",
+        "Hello",
+        0.6,
+        421811368,
+        "randomize"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      31,
+      53,
+      0,
+      56,
+      0,
+      "VIDEO"
+    ],
+    [
+      32,
+      57,
+      0,
+      32,
+      11,
+      "STRING"
+    ],
+    [
+      35,
+      58,
+      0,
+      53,
+      0,
+      "IMAGE"
+    ],
+    [
+      36,
+      55,
+      0,
+      53,
+      1,
+      "IMAGE"
+    ],
+    [
+      37,
+      59,
+      0,
+      53,
+      5,
+      "IMAGE"
+    ],
+    [
+      40,
+      32,
+      0,
+      53,
+      17,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 7,
+      "title": "7、单分镜视频生成",
+      "bounding": [
+        4130.3505859375,
+        -2916.6455078125,
+        1162.9400634765625,
+        126.37965393066406
+      ],
+      "color": "#b58b2a",
+      "font_size": 100,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "links_added_by_ue": [],
+    "ue_links": [],
+    "VHS_MetadataImage": true,
+    "0246.VERSION": [
+      0,
+      0,
+      4
+    ],
+    "VHS_latentpreviewrate": 0,
+    "VHS_latentpreview": false,
+    "frontendVersion": "1.23.0",
+    "ds": {
+      "scale": 0.25937424601000014,
+      "offset": [
+        -2214.350013300378,
+        3416.076875650492
+      ]
+    }
+  },
+  "version": 0.4
+}

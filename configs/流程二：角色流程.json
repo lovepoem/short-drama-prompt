@@ -1,0 +1,461 @@
+{
+  "id": "3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
+  "revision": 0,
+  "last_node_id": 62,
+  "last_link_id": 47,
+  "nodes": [
+    {
+      "id": 51,
+      "type": "SaveImage",
+      "pos": [
+        3628.62353515625,
+        -1288.4342041015625
+      ],
+      "size": [
+        288.1275329589844,
+        426.6260070800781
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 29
+        },
+        {
+          "label": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "image_urls",
+          "name": "image_urls",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "RH_LLMAPI_Pro_Node",
+      "pos": [
+        2453.991943359375,
+        -1444.6619873046875
+      ],
+      "size": [
+        370.2359313964844,
+        698.45849609375
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "image5",
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image6",
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image7",
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image8",
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "label": "role",
+          "name": "role",
+          "type": "STRING",
+          "widget": {
+            "name": "role"
+          }
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 25
+        },
+        {
+          "label": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          }
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_LLMAPI_Pro_Node",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "GLM-4.6V",
+        "系统提示词：\n这是一个为您定制的**系统提示词（System Prompt）**。您可以将这段话发送给ChatGPT或Claude，让它化身为您的“角色设计美术总监”，然后您只需输入剧本中的角色描述，它就会自动生成高质量的AI绘画提示词（适用于Midjourney, Stable Diffusion等）。\n\n***\n\n### 系统提示词：角色设计美术总监 (搞笑日系卡通风格)\n\n```markdown\n# Role: 资深角色设计美术总监 (Senior Character Art Director)\n\n# Profile:\n你是一位拥有20年行业经验的顶尖游戏与CG电影美术总监。你擅长使用Unreal Engine 5 (UE5) 的视觉语言进行创作，对《最终幻想》(Final Fantasy) 系列的CG美学有深刻的理解。你对光影、材质、解剖学以及次世代建模技术有极致的追求。\n\n# Goal:\n根据用户提供的【剧本/角色描述】，提炼关键视觉信息，生成一段适用于AI绘画工具（如Midjourney V6）的高质量英文提示词（Prompt）。\n\n# Art Style & Technical Specs (必须包含的风格关键词):\n1.  **核心风格**: Final Fantasy VII Remake style, Square Enix aesthetic, Hyper-realistic 3D CG, Unreal Engine 5 render.\n2.  **画面质感**: Cinematic lighting, Ray tracing, Global illumination, Octane render, Subsurface scattering (SSS), 8k resolution, Masterpiece.\n3.  **人物细节**: Intricate details, High fidelity textures, Realistic skin pores, Volumetric lighting.\n4.  **构图要求**: Full body shot (or Portrait based on request), Character design sheet.\n5.  **背景强制要求**: **Simple white background, Clean white background, Studio lighting.**\n\n# Workflow:\n1.  **分析**: 仔细阅读用户提供的剧本或描述，提取角色的性别、年龄、外貌特征（发型、发色、瞳色）、服装细节、配饰、武器以及性格气质。\n2.  **转化**: 将提取的特征转化为精准的英文描述词。\n3.  **融合**: 将角色描述与上述【核心风格】和【背景要求】完美融合。\n4.  **输出**: 输出一段完整的英文Prompt，并附带简短的中文设计说明。\n\n# Output Format:\n**【设计思路】**: (简要说明你对该角色的设计构想，100字以内)\n**【Prompt】**: (生成的英文提示词)\n\n# Initialization:\n请回复：“美术总监已就位。请提供您的剧本或角色描述，我将为您生成UE5级别的最终幻想风格角色设定。”\n```\n\n***\n\n### 使用示例\n\n**第一步：** 将上面的代码块复制并发送给AI。\n**第二步：** AI确认后，发送您的剧本描述。\n\n**例如您输入：**\n> 角色：林恩。20岁的女剑士，冷酷，银色长发，穿着黑色的紧身科技感战甲，手里拿着一把发光的蓝色光剑。\n\n**AI将会输出：**\n\n**【设计思路】**:\n基于林恩的冷酷性格与科技感设定，我将采用《最终幻想》中蒂法与克劳德结合的风格。银色长发将处理成丝丝分明的次世代发丝质感，黑色战甲采用皮革与金属混合的高级材质，强调反光与磨损细节。蓝色光剑作为主光源之一，将照亮面部轮廓。背景保持纯白以突出角色设计。\n\n**【Prompt】**:\n**Character design of Lynn, a 20-year-old female swordswoman, cold expression, long silver hair, wearing sleek black futuristic sci-fi tight armor, holding a glowing blue lightsaber, Final Fantasy VII Remake style, Square Enix aesthetic, Unreal Engine 5 render, hyper-realistic 3D CG, cinematic lighting, ray tracing, global illumination, octane render, subsurface scattering on skin, intricate armor details, high fidelity textures, volumetric lighting, simple white background, clean white background, studio lighting, 8k resolution, masterpiece, best quality --ar 3:4 --v 6.0**",
+        "Hello",
+        0.6,
+        306770421,
+        "randomize"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 49,
+      "type": "RH_Nano_Banana_Image2Image",
+      "pos": [
+        2960.312255859375,
+        -1295.72509765625
+      ],
+      "size": [
+        590.3171997070312,
+        505.74566650390625
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image4",
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 27
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "label": "aspectRatio",
+          "name": "aspectRatio",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "aspectRatio"
+          }
+        },
+        {
+          "label": "skip_error",
+          "name": "skip_error",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "skip_error"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            29,
+            38
+          ]
+        },
+        {
+          "label": "image_url",
+          "name": "image_url",
+          "type": "STRING"
+        },
+        {
+          "label": "response",
+          "name": "response",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RH_Nano_Banana_Image2Image",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        2101789880,
+        "randomize",
+        "auto",
+        false
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 60,
+      "type": "PreviewImage",
+      "pos": [
+        3663.23095703125,
+        -774.243896484375
+      ],
+      "size": [
+        142.376953125,
+        246.00003051757812
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "label": "image_urls",
+          "name": "image_urls",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 47,
+      "type": "CR Text",
+      "pos": [
+        1845.013427734375,
+        -1356.350830078125
+      ],
+      "size": [
+        480.03338623046875,
+        456.4563903808594
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "*",
+          "links": [
+            25
+          ]
+        },
+        {
+          "label": "show_help",
+          "name": "show_help",
+          "type": "STRING"
+        }
+      ],
+      "title": "单个角色描述",
+      "properties": {
+        "Node name for S&R": "CR Text",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      25,
+      47,
+      0,
+      29,
+      11,
+      "STRING"
+    ],
+    [
+      27,
+      29,
+      0,
+      49,
+      5,
+      "STRING"
+    ],
+    [
+      29,
+      49,
+      0,
+      51,
+      0,
+      "IMAGE"
+    ],
+    [
+      38,
+      49,
+      0,
+      60,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 4,
+      "title": "4、单角色设计",
+      "bounding": [
+        1980.4246826171875,
+        -1701.7098388671875,
+        1162.9400634765625,
+        126.37965393066406
+      ],
+      "color": "#b58b2a",
+      "font_size": 100,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "links_added_by_ue": [],
+    "ue_links": [],
+    "VHS_MetadataImage": true,
+    "0246.VERSION": [
+      0,
+      0,
+      4
+    ],
+    "VHS_latentpreviewrate": 0,
+    "VHS_latentpreview": false,
+    "frontendVersion": "1.23.0",
+    "ds": {
+      "scale": 0.4090909090909096,
+      "offset": [
+        -884.6817155842136,
+        2108.8855754048423
+      ]
+    }
+  },
+  "version": 0.4
+}
