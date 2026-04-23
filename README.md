@@ -1,6 +1,4 @@
-# short-drama-
-
-短剧生成基础流程提示词和runninghub.cn流程配置
+# 短剧生成基础流程提示词和runninghub.cn流程配置
 ```Markdown
 ┌──────────────────────┐
 │ 1. 网文 → 剧本        │
