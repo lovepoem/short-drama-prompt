@@ -1,471 +1,531 @@
 {
-  "id": "3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
-  "revision": 0,
-  "last_node_id": 64,
-  "last_link_id": 49,
-  "nodes": [
-    {
-      "id": 64,
-      "type": "SaveImage",
-      "pos": [
-        3517.62158203125,
-        149.09194946289062
-      ],
-      "size": [
-        278.6650390625,
-        270
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "images",
-          "name": "images",
-          "type": "IMAGE",
-          "link": 49
-        },
-        {
-          "label": "filename_prefix",
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "image_urls",
-          "name": "image_urls",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 30,
-      "type": "RH_LLMAPI_Pro_Node",
-      "pos": [
-        2546.6357421875,
-        125.4515609741211
-      ],
-      "size": [
-        370.2359313964844,
-        698.45849609375
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image1",
-          "name": "image1",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image2",
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image3",
-          "name": "image3",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image4",
-          "name": "image4",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "video",
-          "name": "video",
-          "shape": 7,
-          "type": "VIDEO"
-        },
-        {
-          "label": "image5",
-          "name": "image5",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image6",
-          "name": "image6",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image7",
-          "name": "image7",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image8",
-          "name": "image8",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "model",
-          "name": "model",
-          "type": "COMBO",
-          "widget": {
-            "name": "model"
-          }
-        },
-        {
-          "label": "role",
-          "name": "role",
-          "type": "STRING",
-          "widget": {
-            "name": "role"
-          }
-        },
-        {
-          "label": "prompt",
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 26
-        },
-        {
-          "label": "temperature",
-          "name": "temperature",
-          "type": "FLOAT",
-          "widget": {
-            "name": "temperature"
-          }
-        },
-        {
-          "label": "seed",
-          "name": "seed",
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "response",
-          "name": "response",
-          "type": "STRING",
-          "links": [
-            48
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RH_LLMAPI_Pro_Node",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "gemini-3.1-pro-preview",
-        "这是一个为你定制的**系统提示词（System Prompt）**。你可以将这段指令发送给ChatGPT或Claude，让它化身为你的“美术总监”，根据你提供的剧本段落自动生成高质量的绘画提示词（适用于Midjourney, Stable Diffusion等）。\n\n---\n\n### 系统提示词指令 (复制以下内容)\n\n```markdown\n# Role: 资深电影美术总监 (Art Director)\n\n## Profile\n你是一位拥有20年经验的历史题材电影美术总监，专精于场景记录电影 的画面表现。你擅长通过光影、材质和大气效果传达宏大的叙事感。\n\n## Task\n根据用户提供的【剧本描述】，编写一段用于AI绘画（如Midjourney）的详细场景设计提示词。\n\n## Style Guidelines\n1.  **核心风格**: 电影场景写实风格, 超写实, 电影级, 史诗级风景纪录片风格（华丽、细腻、高动态范围）。\n2.  **画面质感**: 8K分辨率, 光线追踪(Ray Tracing), 体积光(Volumetric Lighting), 极其详细的纹理(Hyper-detailed textures)。\n3.  **构图**: 广角镜头或全景视图，强调场景的宏大与纵深。\n\n## Constraints (必须遵守)\n1.  **绝对禁止出现人物**: 场景必须是空镜，没有人、角色或生物。重点在于环境本身。\n2.  **语言**: 输出的提示词主要为英文（AI绘图通用），并附带中文结构说明。\n\n## Workflow & Output Format\n请分析剧本，按以下结构生成提示词：\n\n**1. 场景分析 (中文)**\n简要分析剧本中的核心视觉元素。\n\n**2. 最终提示词 (英文)**\n请按照以下公式组合关键词：\n`[全景主场景描述] + [地面与细节] + [天空与天气] + [光线与氛围] + [渲染与风格参数] + --no people characters humans`\n\n*   **全景描述**: 宏观描述场景结构、建筑或自然景观。\n*   **地面描述**: 植被、材质（湿润的石头、金属地板等）、反射。\n*   **天空描述**: 云层形态、星空、天色。\n*   **光线描述**: 时间（日/夜）、光源位置、丁达尔效应、辉光。\n*   **大气描述**: 雾气、尘埃粒子、空气透视感。\n*   **风格参数**: Unreal Engine 5, Octane Render, Final Fantasy Style, Cinematic, 8k, Masterpiece.\n\n---\n**请等待用户输入剧本片段。**\n```\n\n---\n\n### 使用示例\n\n**用户输入剧本：**\n> “这是一座悬浮在空中的古老神殿遗迹，周围环绕着破碎的浮石。时间是黄昏，夕阳将云层染成血红色，神殿的断壁残垣上刻着发光的蓝色符文，空气中漂浮着金色的魔法尘埃。”\n\n**AI（美术总监）输出：**\n\n**1. 场景分析**\n*   **主体**: 悬浮的古老神殿遗迹，破碎浮石。\n*   **风格**: 史诗感，神秘，魔法与科技结合（FF风格）。\n*   **时间**: 黄昏（Magic Hour）。\n*   **氛围**: 红色夕阳与蓝色符文的冷暖对比，金色尘埃增加神性。\n\n**2. 最终提示词**\n> **Panoramic view of an ancient floating temple ruins hovering in the sky, surrounded by shattered floating rocks and debris, massive broken stone pillars with glowing blue ancient runes, intricate carvings, hyper-realistic rock textures.**\n>\n> **Ground consists of fragmented floating platforms, mossy stone surfaces reflecting the light.**\n>\n> **Sky is filled with dramatic cumulus clouds dyed blood-red by the setting sun, vast horizon, twilight.**\n>\n> **Lighting features cinematic sunset lighting, contrasting with the cold blue glow of the runes, golden magical dust particles floating in the air, volumetric fog, god rays.**\n>\n>  8k resolution, hyper-detailed, epic scale, cinematic composition, masterpiece.**\n>\n> **--no people characters humans living beings**",
-        "Hello",
-        0.6,
-        1866406257,
-        "randomize"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 63,
-      "type": "RH_Nano_Banana2_Gemini31Flash",
-      "pos": [
-        3050.774169921875,
-        131.35128784179688
-      ],
-      "size": [
-        374.6089782714844,
-        595
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "images",
-          "name": "images",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image1",
-          "name": "image1",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image2",
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image3",
-          "name": "image3",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image4",
-          "name": "image4",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image5",
-          "name": "image5",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image6",
-          "name": "image6",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image7",
-          "name": "image7",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image8",
-          "name": "image8",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image9",
-          "name": "image9",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "prompt",
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 48
-        },
-        {
-          "label": "seed",
-          "name": "seed",
-          "shape": 7,
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          }
-        },
-        {
-          "label": "aspectRatio",
-          "name": "aspectRatio",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "aspectRatio"
-          }
-        },
-        {
-          "label": "resolution",
-          "name": "resolution",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "resolution"
-          }
-        },
-        {
-          "label": "skip_error",
-          "name": "skip_error",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "skip_error"
-          }
-        },
-        {
-          "label": "channel",
-          "name": "channel",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "channel"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            49
-          ]
-        },
-        {
-          "label": "image_url",
-          "name": "image_url",
-          "type": "STRING"
-        },
-        {
-          "label": "response",
-          "name": "response",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RH_Nano_Banana2_Gemini31Flash",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "",
-        801142849,
-        "randomize",
-        "9:16",
-        "2k",
-        false,
-        "Third-party"
-      ]
-    },
-    {
-      "id": 48,
-      "type": "CR Text",
-      "pos": [
-        1970.03076171875,
-        133.72178649902344
-      ],
-      "size": [
-        480.03338623046875,
-        456.4563903808594
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "*",
-          "links": [
-            26
-          ]
-        },
-        {
-          "label": "show_help",
-          "name": "show_help",
-          "type": "STRING"
-        }
-      ],
-      "title": "单个场景描述",
-      "properties": {
-        "Node name for S&R": "CR Text",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "### 【场景1_创投峰会后台杂物区】\n- **【时空设定】**：内景，日，封闭空间（无自然光）\n- **【氛围基调】**：杂乱逼仄、市井廉价、与前台的奢华形成强烈反差\n- **【纯景视觉描述】**：\n  狭窄的后台通道，斑驳的水泥地面上散落着几张皱巴巴的小面额纸币。画面一侧，一堆破旧、边角凹陷的瓦楞纸箱摇摇欲坠地堆叠在生锈的金属推车旁。头顶是一盏接触不良的冷白色日光灯，灯光微弱且闪烁，将纸箱的阴影拉得扭曲而杂乱。地面上静静躺着一根黑色的安保橡胶警棍。空气中弥漫着细微的灰尘，一束从前台会场门缝漏进来的暖色射灯光束如同利剑般切开昏暗的后台，形成明显的丁达尔光效，照亮了半空中的浮尘与地上的零钞。"
-      ]
-    }
-  ],
-  "links": [
-    [
-      26,
-      48,
-      0,
-      30,
-      11,
-      "STRING"
-    ],
-    [
-      48,
-      30,
-      0,
-      63,
-      10,
-      "STRING"
-    ],
-    [
-      49,
-      63,
-      0,
-      64,
-      0,
-      "IMAGE"
-    ]
-  ],
-  "groups": [
-    {
-      "id": 5,
-      "title": "5、单场景设计",
-      "bounding": [
-        1954.083251953125,
-        -366.41943359375,
-        1162.9400634765625,
-        126.37965393066406
-      ],
-      "color": "#b58b2a",
-      "font_size": 100,
-      "flags": {}
-    }
-  ],
-  "config": {},
-  "extra": {
-    "VHS_KeepIntermediate": true,
-    "links_added_by_ue": [],
-    "ue_links": [],
-    "VHS_MetadataImage": true,
-    "0246.VERSION": [
-      0,
-      0,
-      4
-    ],
-    "VHS_latentpreviewrate": 0,
-    "VHS_latentpreview": false,
-    "frontendVersion": "1.23.0",
-    "ds": {
-      "scale": 0.8769226950000019,
-      "offset": [
-        -1765.6067505346805,
-        219.75253062786405
-      ]
-    }
-  },
-  "version": 0.4
+	"last_link_id":49,
+	"nodes":[
+		{
+			"outputs":[
+				{
+					"name":"image_urls",
+					"label":"image_urls",
+					"type":"STRING",
+					"localized_name":"image_urls"
+				}
+			],
+			"color":"#432",
+			"widgets_values":[
+				"ComfyUI"
+			],
+			"inputs":[
+				{
+					"name":"images",
+					"link":49,
+					"label":"images",
+					"type":"IMAGE",
+					"localized_name":"images"
+				},
+				{
+					"widget":{
+						"name":"filename_prefix"
+					},
+					"name":"filename_prefix",
+					"label":"filename_prefix",
+					"type":"STRING",
+					"localized_name":"filename_prefix"
+				}
+			],
+			"flags":{
+				"collapsed":false
+			},
+			"type":"SaveImage",
+			"mode":0,
+			"bgcolor":"#653",
+			"size":[
+				278.6650390625,
+				270
+			],
+			"pos":[
+				3517.62158203125,
+				149.09194946289062
+			],
+			"id":64,
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"SaveImage"
+			},
+			"order":3
+		},
+		{
+			"mode":0,
+			"outputs":[
+				{
+					"name":"image",
+					"links":[
+						49
+					],
+					"label":"image",
+					"type":"IMAGE",
+					"localized_name":"image"
+				},
+				{
+					"name":"image_url",
+					"label":"image_url",
+					"type":"STRING",
+					"localized_name":"image_url"
+				},
+				{
+					"name":"response",
+					"label":"response",
+					"type":"STRING",
+					"localized_name":"response"
+				}
+			],
+			"size":[
+				374.6089782714844,
+				595
+			],
+			"pos":[
+				3050.774169921875,
+				131.35128784179688
+			],
+			"widgets_values":[
+				"",
+				703648869,
+				"randomize",
+				"9:16",
+				"2k",
+				false,
+				"Third-party"
+			],
+			"inputs":[
+				{
+					"shape":7,
+					"name":"images",
+					"label":"images",
+					"type":"IMAGE",
+					"localized_name":"images"
+				},
+				{
+					"shape":7,
+					"name":"image1",
+					"label":"image1",
+					"type":"IMAGE",
+					"localized_name":"image1"
+				},
+				{
+					"shape":7,
+					"name":"image2",
+					"label":"image2",
+					"type":"IMAGE",
+					"localized_name":"image2"
+				},
+				{
+					"shape":7,
+					"name":"image3",
+					"label":"image3",
+					"type":"IMAGE",
+					"localized_name":"image3"
+				},
+				{
+					"shape":7,
+					"name":"image4",
+					"label":"image4",
+					"type":"IMAGE",
+					"localized_name":"image4"
+				},
+				{
+					"shape":7,
+					"name":"image5",
+					"label":"image5",
+					"type":"IMAGE",
+					"localized_name":"image5"
+				},
+				{
+					"shape":7,
+					"name":"image6",
+					"label":"image6",
+					"type":"IMAGE",
+					"localized_name":"image6"
+				},
+				{
+					"shape":7,
+					"name":"image7",
+					"label":"image7",
+					"type":"IMAGE",
+					"localized_name":"image7"
+				},
+				{
+					"shape":7,
+					"name":"image8",
+					"label":"image8",
+					"type":"IMAGE",
+					"localized_name":"image8"
+				},
+				{
+					"shape":7,
+					"name":"image9",
+					"label":"image9",
+					"type":"IMAGE",
+					"localized_name":"image9"
+				},
+				{
+					"widget":{
+						"name":"prompt"
+					},
+					"name":"prompt",
+					"link":48,
+					"label":"prompt",
+					"type":"STRING",
+					"localized_name":"prompt"
+				},
+				{
+					"widget":{
+						"name":"seed"
+					},
+					"shape":7,
+					"name":"seed",
+					"label":"seed",
+					"type":"INT",
+					"localized_name":"seed"
+				},
+				{
+					"widget":{
+						"name":"aspectRatio"
+					},
+					"shape":7,
+					"name":"aspectRatio",
+					"label":"aspectRatio",
+					"type":"COMBO",
+					"localized_name":"aspectRatio"
+				},
+				{
+					"widget":{
+						"name":"resolution"
+					},
+					"shape":7,
+					"name":"resolution",
+					"label":"resolution",
+					"type":"COMBO",
+					"localized_name":"resolution"
+				},
+				{
+					"widget":{
+						"name":"skip_error"
+					},
+					"shape":7,
+					"name":"skip_error",
+					"label":"skip_error",
+					"type":"BOOLEAN",
+					"localized_name":"skip_error"
+				},
+				{
+					"widget":{
+						"name":"channel"
+					},
+					"shape":7,
+					"name":"channel",
+					"label":"channel",
+					"type":"COMBO",
+					"localized_name":"channel"
+				}
+			],
+			"flags":{
+				"collapsed":false
+			},
+			"id":63,
+			"type":"RH_Nano_Banana2_Gemini31Flash",
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"RH_Nano_Banana2_Gemini31Flash"
+			},
+			"order":2
+		},
+		{
+			"outputs":[
+				{
+					"name":"response",
+					"links":[
+						48
+					],
+					"label":"response",
+					"type":"STRING",
+					"localized_name":"response"
+				}
+			],
+			"color":"#432",
+			"widgets_values":[
+				"gemini-3.1-pro-preview",
+				"系统提示词：\n\n一、角色定义：\n你是一位资深影视美术指导与堪景专家，同时精通AI绘画提示词工程。你的任务是从剧本中梳理所有独立物理场景，并输出标准化的场景档案，供后续的分镜脚本编写和AI场景视觉生成直接引用。\n\n二、任务目标：\n根据提供的短剧剧本，梳理出所有独立的物理场景，为每个场景分配唯一ID，并生成极具画面感和光影细节的纯空镜场景描述。\n\n三、工作准则：\n1. 场景合并去重：将同一物理空间的不同戏份归并为一个场景词条，按剧本出场顺序排列。如果同一地点在不同时间（日/夜）出现且氛围差异巨大，则拆分为两个场景。\n2. 氛围与光影强化：根据剧本发生的时间（日/夜）、天气以及剧情情绪（压抑/轻松/紧张），提炼或补充场景的光影与氛围。\n3. 关键道具与陈设：提取剧本中明确提到的核心道具并固定其位置。\n4. 绝对排除人物：场景描述必须是纯粹的\"空镜\"描述，绝对不能包含任何人物角色或生物。\n5. 风格一致性锚点：为每个场景提炼3-5个\"视觉锚点关键词\"，作为后续环节保持场景一致性的核心标识。\n\n四、输出格式（严格遵守）：\n\n对当前场景，按以下模板输出：\n\n===========================\n场景ID：S-001\n场景名称：（如：海市出租屋）\n时空设定：（内景/外景，日/夜，天气情况）\n剧情用途：（简述本场景在剧中承载的功能，如\"主角初获系统、日常搞笑\"）\n氛围基调：（如：逼仄压抑但带有生活气息、科幻震撼、紧张对峙）\n纯景视觉描述：（包含建筑结构、核心道具布置、材质质感、光影效果的详细描述，80-150字。不得出现任何人物。重点描述空间的整体结构、标志性物件、光源方向与色温。）\n视觉锚点关键词：（3-5个最具辨识度的场景关键词，用于后续环节快速识别该场景）\n示例：狭小出租屋、蓝色电脑屏光、堆满泡面盒、窗外霓虹灯\n请为当前场景生成一个图片\n剧本：\n\n（粘贴Step1输出的剧本）",
+				"Hello",
+				0.6,
+				207605406,
+				"randomize"
+			],
+			"inputs":[
+				{
+					"shape":7,
+					"name":"image1",
+					"label":"image1",
+					"type":"IMAGE",
+					"localized_name":"image1"
+				},
+				{
+					"shape":7,
+					"name":"image2",
+					"label":"image2",
+					"type":"IMAGE",
+					"localized_name":"image2"
+				},
+				{
+					"shape":7,
+					"name":"image3",
+					"label":"image3",
+					"type":"IMAGE",
+					"localized_name":"image3"
+				},
+				{
+					"shape":7,
+					"name":"image4",
+					"label":"image4",
+					"type":"IMAGE",
+					"localized_name":"image4"
+				},
+				{
+					"shape":7,
+					"name":"video",
+					"label":"video",
+					"type":"VIDEO",
+					"localized_name":"video"
+				},
+				{
+					"shape":7,
+					"name":"image5",
+					"label":"image5",
+					"type":"IMAGE",
+					"localized_name":"image5"
+				},
+				{
+					"shape":7,
+					"name":"image6",
+					"label":"image6",
+					"type":"IMAGE",
+					"localized_name":"image6"
+				},
+				{
+					"shape":7,
+					"name":"image7",
+					"label":"image7",
+					"type":"IMAGE",
+					"localized_name":"image7"
+				},
+				{
+					"shape":7,
+					"name":"image8",
+					"label":"image8",
+					"type":"IMAGE",
+					"localized_name":"image8"
+				},
+				{
+					"widget":{
+						"name":"model"
+					},
+					"name":"model",
+					"label":"model",
+					"type":"COMBO",
+					"localized_name":"model"
+				},
+				{
+					"widget":{
+						"name":"role"
+					},
+					"name":"role",
+					"label":"role",
+					"type":"STRING",
+					"localized_name":"role"
+				},
+				{
+					"widget":{
+						"name":"prompt"
+					},
+					"name":"prompt",
+					"link":26,
+					"label":"prompt",
+					"type":"STRING",
+					"localized_name":"prompt"
+				},
+				{
+					"widget":{
+						"name":"temperature"
+					},
+					"name":"temperature",
+					"label":"temperature",
+					"type":"FLOAT",
+					"localized_name":"temperature"
+				},
+				{
+					"widget":{
+						"name":"seed"
+					},
+					"name":"seed",
+					"label":"seed",
+					"type":"INT",
+					"localized_name":"seed"
+				}
+			],
+			"flags":{
+				
+			},
+			"type":"RH_LLMAPI_Pro_Node",
+			"mode":0,
+			"bgcolor":"#653",
+			"size":[
+				370.2359313964844,
+				698.45849609375
+			],
+			"pos":[
+				2546.6357421875,
+				125.4515609741211
+			],
+			"id":30,
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"RH_LLMAPI_Pro_Node"
+			},
+			"order":1
+		},
+		{
+			"mode":0,
+			"outputs":[
+				{
+					"name":"text",
+					"links":[
+						26
+					],
+					"label":"text",
+					"type":"*",
+					"localized_name":"text"
+				},
+				{
+					"name":"show_help",
+					"label":"show_help",
+					"type":"STRING",
+					"localized_name":"show_help"
+				}
+			],
+			"size":[
+				480.03338623046875,
+				456.4563903808594
+			],
+			"pos":[
+				1970.03076171875,
+				133.72178649902344
+			],
+			"widgets_values":[
+				"场景ID：S-002\n场景名称：VIP休息室\n时空设定：内景 / 日 / 雷暴天气\n剧情用途：男女主首次交锋，男主凭借系统外挂与话术成功拿捏女主\n氛围基调：奢华空旷、权势压迫感与微妙的暖意交织\n纯景视觉描述：一间面积宽阔、极具压迫感的顶配高管休息室。巨大的全景落地玻璃窗外是黑压压的雷暴云层，不时有闪电划破天际，在室内投下瞬间惨白的冷光。室内中央摆放着一组尺寸极其夸张的黑色顶级真皮欧式大沙发，与周围冷硬的深色木质护墙板形成呼应。沙发正前方的黑金大理石小茶几上，孤零零地放置着一杯正在袅袅升腾着白色热气的水杯。室内主光源为顶部的暖色奢华水晶吊灯，与窗外的阴冷雷暴形成强烈的冷暖色温冲突，凸显出绝对的权利空间感。\n视觉锚点关键词：超大尺寸黑皮沙发、黑金大理石茶几、冒热气的水杯、雷暴落地窗\n==========================="
+			],
+			"inputs":[
+				{
+					"widget":{
+						"name":"text"
+					},
+					"name":"text",
+					"label":"text",
+					"type":"STRING",
+					"localized_name":"text"
+				}
+			],
+			"flags":{
+				
+			},
+			"id":48,
+			"type":"CR Text",
+			"title":"单个场景描述",
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"CR Text"
+			},
+			"order":0
+		}
+	],
+	"extra":{
+		"VHS_KeepIntermediate":true,
+		"links_added_by_ue":[
+			
+		],
+		"ue_links":[
+			
+		],
+		"VHS_MetadataImage":true,
+		"0246.VERSION":[
+			0,
+			0,
+			4
+		],
+		"VHS_latentpreviewrate":0,
+		"VHS_latentpreview":false,
+		"frontendVersion":"1.23.0",
+		"ds":{
+			"offset":[
+				-218.9363437228733,
+				525.8277960883246
+			],
+			"scale":0.45
+		}
+	},
+	"groups":[
+		{
+			"color":"#b58b2a",
+			"font_size":100,
+			"flags":{
+				
+			},
+			"id":5,
+			"title":"5、单场景设计",
+			"bounding":[
+				1954.083251953125,
+				-366.41943359375,
+				1162.9400634765625,
+				126.37965393066406
+			]
+		}
+	],
+	"links":[
+		[
+			26,
+			48,
+			0,
+			30,
+			11,
+			"STRING"
+		],
+		[
+			48,
+			30,
+			0,
+			63,
+			10,
+			"STRING"
+		],
+		[
+			49,
+			63,
+			0,
+			64,
+			0,
+			"IMAGE"
+		]
+	],
+	"id":"3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
+	"config":{
+		
+	},
+	"version":0.4,
+	"last_node_id":64,
+	"revision":0
 }

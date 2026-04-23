@@ -1,471 +1,531 @@
 {
-  "id": "3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
-  "revision": 0,
-  "last_node_id": 65,
-  "last_link_id": 54,
-  "nodes": [
-    {
-      "id": 29,
-      "type": "RH_LLMAPI_Pro_Node",
-      "pos": [
-        2453.991943359375,
-        -1444.6619873046875
-      ],
-      "size": [
-        370.2359313964844,
-        698.45849609375
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image1",
-          "name": "image1",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image2",
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image3",
-          "name": "image3",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image4",
-          "name": "image4",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "video",
-          "name": "video",
-          "shape": 7,
-          "type": "VIDEO"
-        },
-        {
-          "label": "image5",
-          "name": "image5",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image6",
-          "name": "image6",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image7",
-          "name": "image7",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image8",
-          "name": "image8",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "model",
-          "name": "model",
-          "type": "COMBO",
-          "widget": {
-            "name": "model"
-          }
-        },
-        {
-          "label": "role",
-          "name": "role",
-          "type": "STRING",
-          "widget": {
-            "name": "role"
-          }
-        },
-        {
-          "label": "prompt",
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 25
-        },
-        {
-          "label": "temperature",
-          "name": "temperature",
-          "type": "FLOAT",
-          "widget": {
-            "name": "temperature"
-          }
-        },
-        {
-          "label": "seed",
-          "name": "seed",
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "response",
-          "name": "response",
-          "type": "STRING",
-          "links": [
-            53
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RH_LLMAPI_Pro_Node",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "gemini-3.1-pro-preview",
-        "系统提示词：\n这是一个为您定制的**系统提示词（System Prompt）**。您可以将这段话发送给ChatGPT或Claude，让它化身为您的“角色设计美术总监”，然后您只需输入剧本中的角色描述，它就会自动生成高质量的AI绘画提示词（适用于Midjourney, Stable Diffusion等）。\n\n***\n\n### 系统提示词：角色设计美术总监 (搞笑日系卡通风格)\n\n```markdown\n# Role: 资深角色设计美术总监 (Senior Character Art Director)\n\n# Profile:\n你是一位拥有20年行业经验的顶尖游戏与CG电影美术总监。你擅长使用Unreal Engine 5 (UE5) 的视觉语言进行创作，对《最终幻想》(Final Fantasy) 系列的CG美学有深刻的理解。你对光影、材质、解剖学以及次世代建模技术有极致的追求。\n\n# Goal:\n根据用户提供的【剧本/角色描述】，提炼关键视觉信息，生成一段适用于AI绘画工具（如Midjourney V6）的高质量英文提示词（Prompt）。\n\n# Art Style & Technical Specs (必须包含的风格关键词):\n1.  **核心风格**: Final Fantasy VII Remake style, Square Enix aesthetic, Hyper-realistic 3D CG, Unreal Engine 5 render.\n2.  **画面质感**: Cinematic lighting, Ray tracing, Global illumination, Octane render, Subsurface scattering (SSS), 8k resolution, Masterpiece.\n3.  **人物细节**: Intricate details, High fidelity textures, Realistic skin pores, Volumetric lighting.\n4.  **构图要求**: Full body shot (or Portrait based on request), Character design sheet.\n5.  **背景强制要求**: **Simple white background, Clean white background, Studio lighting.**\n\n# Workflow:\n1.  **分析**: 仔细阅读用户提供的剧本或描述，提取角色的性别、年龄、外貌特征（发型、发色、瞳色）、服装细节、配饰、武器以及性格气质。\n2.  **转化**: 将提取的特征转化为精准的英文描述词。\n3.  **融合**: 将角色描述与上述【核心风格】和【背景要求】完美融合。\n4.  **输出**: 输出一段完整的英文Prompt，并附带简短的中文设计说明。\n\n# Output Format:\n**【设计思路】**: (简要说明你对该角色的设计构想，100字以内)\n**【Prompt】**: (生成的英文提示词)\n\n# Initialization:\n请回复：“美术总监已就位。请提供您的剧本或角色描述，我将为您生成UE5级别的最终幻想风格角色设定。”\n```\n\n***\n\n### 使用示例\n\n**第一步：** 将上面的代码块复制并发送给AI。\n**第二步：** AI确认后，发送您的剧本描述。\n\n**例如您输入：**\n> 角色：林恩。20岁的女剑士，冷酷，银色长发，穿着黑色的紧身科技感战甲，手里拿着一把发光的蓝色光剑。\n\n**AI将会输出：**\n\n**【设计思路】**:\n基于林恩的冷酷性格与科技感设定，我将采用《最终幻想》中蒂法与克劳德结合的风格。银色长发将处理成丝丝分明的次世代发丝质感，黑色战甲采用皮革与金属混合的高级材质，强调反光与磨损细节。蓝色光剑作为主光源之一，将照亮面部轮廓。背景保持纯白以突出角色设计。\n\n**【Prompt】**:\n**Character design of Lynn, a 20-year-old female swordswoman, cold expression, long silver hair, wearing sleek black futuristic sci-fi tight armor, holding a glowing blue lightsaber, Final Fantasy VII Remake style, Square Enix aesthetic, Unreal Engine 5 render, hyper-realistic 3D CG, cinematic lighting, ray tracing, global illumination, octane render, subsurface scattering on skin, intricate armor details, high fidelity textures, volumetric lighting, simple white background, clean white background, studio lighting, 8k resolution, masterpiece, best quality --ar 3:4 --v 6.0**",
-        "Hello",
-        0.6,
-        1335029426,
-        "randomize"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 65,
-      "type": "RH_Nano_Banana2_Gemini31Flash",
-      "pos": [
-        2949.218017578125,
-        -1426.939453125
-      ],
-      "size": [
-        374.6089782714844,
-        595
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "images",
-          "name": "images",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image1",
-          "name": "image1",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image2",
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image3",
-          "name": "image3",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image4",
-          "name": "image4",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image5",
-          "name": "image5",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image6",
-          "name": "image6",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image7",
-          "name": "image7",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image8",
-          "name": "image8",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image9",
-          "name": "image9",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "prompt",
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 53
-        },
-        {
-          "label": "seed",
-          "name": "seed",
-          "shape": 7,
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          }
-        },
-        {
-          "label": "aspectRatio",
-          "name": "aspectRatio",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "aspectRatio"
-          }
-        },
-        {
-          "label": "resolution",
-          "name": "resolution",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "resolution"
-          }
-        },
-        {
-          "label": "skip_error",
-          "name": "skip_error",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "skip_error"
-          }
-        },
-        {
-          "label": "channel",
-          "name": "channel",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "channel"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            54
-          ]
-        },
-        {
-          "label": "image_url",
-          "name": "image_url",
-          "type": "STRING"
-        },
-        {
-          "label": "response",
-          "name": "response",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RH_Nano_Banana2_Gemini31Flash",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "",
-        567945966,
-        "randomize",
-        "9:16",
-        "2k",
-        false,
-        "Third-party"
-      ]
-    },
-    {
-      "id": 47,
-      "type": "CR Text",
-      "pos": [
-        1845.013427734375,
-        -1356.350830078125
-      ],
-      "size": [
-        480.03338623046875,
-        456.4563903808594
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "*",
-          "links": [
-            25
-          ]
-        },
-        {
-          "label": "show_help",
-          "name": "show_help",
-          "type": "STRING"
-        }
-      ],
-      "title": "单个角色描述",
-      "properties": {
-        "Node name for S&R": "CR Text",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "- 【角色名称】：**江驰（男主）**\n- 【身份/设定】：底层打工人 / “暗爽打脸系统”宿主\n- 【性格特征】：腹黑、极致利己、表面唯唯诺诺、内心戏极多\n- 【视觉外观描述】：27岁男性。略显凌乱的碎盖短发，黑眼圈微重，眼神透着精明。穿着廉价且略显褶皱的灰蓝色休闲西装，内搭洗得发白的白T恤，斜挎旧帆布包。手里常拿着一个颇具年代感的不锈钢保温杯。整体呈现“又穷又苟”但暗藏锋芒的市侩打工人气质。"
-      ]
-    },
-    {
-      "id": 64,
-      "type": "SaveImage",
-      "pos": [
-        3475.7119140625,
-        -1424.206787109375
-      ],
-      "size": [
-        278.6650390625,
-        270
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "images",
-          "name": "images",
-          "type": "IMAGE",
-          "link": 54
-        },
-        {
-          "label": "filename_prefix",
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "image_urls",
-          "name": "image_urls",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    }
-  ],
-  "links": [
-    [
-      25,
-      47,
-      0,
-      29,
-      11,
-      "STRING"
-    ],
-    [
-      53,
-      29,
-      0,
-      65,
-      10,
-      "STRING"
-    ],
-    [
-      54,
-      65,
-      0,
-      64,
-      0,
-      "IMAGE"
-    ]
-  ],
-  "groups": [
-    {
-      "id": 4,
-      "title": "4、单角色设计",
-      "bounding": [
-        1980.4246826171875,
-        -1701.7098388671875,
-        1162.9400634765625,
-        126.37965393066406
-      ],
-      "color": "#b58b2a",
-      "font_size": 100,
-      "flags": {}
-    }
-  ],
-  "config": {},
-  "extra": {
-    "VHS_KeepIntermediate": true,
-    "links_added_by_ue": [],
-    "ue_links": [],
-    "VHS_MetadataImage": true,
-    "0246.VERSION": [
-      0,
-      0,
-      4
-    ],
-    "VHS_latentpreviewrate": 0,
-    "VHS_latentpreview": false,
-    "frontendVersion": "1.23.0",
-    "ds": {
-      "scale": 0.45,
-      "offset": [
-        -1646.155544704861,
-        2154.7623426649307
-      ]
-    }
-  },
-  "version": 0.4
+	"last_link_id":54,
+	"nodes":[
+		{
+			"outputs":[
+				{
+					"name":"image_urls",
+					"label":"image_urls",
+					"type":"STRING",
+					"localized_name":"image_urls"
+				}
+			],
+			"color":"#432",
+			"widgets_values":[
+				"ComfyUI"
+			],
+			"inputs":[
+				{
+					"name":"images",
+					"link":54,
+					"label":"images",
+					"type":"IMAGE",
+					"localized_name":"images"
+				},
+				{
+					"widget":{
+						"name":"filename_prefix"
+					},
+					"name":"filename_prefix",
+					"label":"filename_prefix",
+					"type":"STRING",
+					"localized_name":"filename_prefix"
+				}
+			],
+			"flags":{
+				"collapsed":false
+			},
+			"type":"SaveImage",
+			"mode":0,
+			"bgcolor":"#653",
+			"size":[
+				278.6650390625,
+				270
+			],
+			"pos":[
+				3475.7119140625,
+				-1424.206787109375
+			],
+			"id":64,
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"SaveImage"
+			},
+			"order":3
+		},
+		{
+			"mode":0,
+			"outputs":[
+				{
+					"name":"image",
+					"links":[
+						54
+					],
+					"label":"image",
+					"type":"IMAGE",
+					"localized_name":"image"
+				},
+				{
+					"name":"image_url",
+					"label":"image_url",
+					"type":"STRING",
+					"localized_name":"image_url"
+				},
+				{
+					"name":"response",
+					"label":"response",
+					"type":"STRING",
+					"localized_name":"response"
+				}
+			],
+			"size":[
+				374.6089782714844,
+				595
+			],
+			"pos":[
+				2941.019775390625,
+				-1406.5526123046875
+			],
+			"widgets_values":[
+				"",
+				480675046,
+				"randomize",
+				"9:16",
+				"2k",
+				false,
+				"Third-party"
+			],
+			"inputs":[
+				{
+					"shape":7,
+					"name":"images",
+					"label":"images",
+					"type":"IMAGE",
+					"localized_name":"images"
+				},
+				{
+					"shape":7,
+					"name":"image1",
+					"label":"image1",
+					"type":"IMAGE",
+					"localized_name":"image1"
+				},
+				{
+					"shape":7,
+					"name":"image2",
+					"label":"image2",
+					"type":"IMAGE",
+					"localized_name":"image2"
+				},
+				{
+					"shape":7,
+					"name":"image3",
+					"label":"image3",
+					"type":"IMAGE",
+					"localized_name":"image3"
+				},
+				{
+					"shape":7,
+					"name":"image4",
+					"label":"image4",
+					"type":"IMAGE",
+					"localized_name":"image4"
+				},
+				{
+					"shape":7,
+					"name":"image5",
+					"label":"image5",
+					"type":"IMAGE",
+					"localized_name":"image5"
+				},
+				{
+					"shape":7,
+					"name":"image6",
+					"label":"image6",
+					"type":"IMAGE",
+					"localized_name":"image6"
+				},
+				{
+					"shape":7,
+					"name":"image7",
+					"label":"image7",
+					"type":"IMAGE",
+					"localized_name":"image7"
+				},
+				{
+					"shape":7,
+					"name":"image8",
+					"label":"image8",
+					"type":"IMAGE",
+					"localized_name":"image8"
+				},
+				{
+					"shape":7,
+					"name":"image9",
+					"label":"image9",
+					"type":"IMAGE",
+					"localized_name":"image9"
+				},
+				{
+					"widget":{
+						"name":"prompt"
+					},
+					"name":"prompt",
+					"link":53,
+					"label":"prompt",
+					"type":"STRING",
+					"localized_name":"prompt"
+				},
+				{
+					"widget":{
+						"name":"seed"
+					},
+					"shape":7,
+					"name":"seed",
+					"label":"seed",
+					"type":"INT",
+					"localized_name":"seed"
+				},
+				{
+					"widget":{
+						"name":"aspectRatio"
+					},
+					"shape":7,
+					"name":"aspectRatio",
+					"label":"aspectRatio",
+					"type":"COMBO",
+					"localized_name":"aspectRatio"
+				},
+				{
+					"widget":{
+						"name":"resolution"
+					},
+					"shape":7,
+					"name":"resolution",
+					"label":"resolution",
+					"type":"COMBO",
+					"localized_name":"resolution"
+				},
+				{
+					"widget":{
+						"name":"skip_error"
+					},
+					"shape":7,
+					"name":"skip_error",
+					"label":"skip_error",
+					"type":"BOOLEAN",
+					"localized_name":"skip_error"
+				},
+				{
+					"widget":{
+						"name":"channel"
+					},
+					"shape":7,
+					"name":"channel",
+					"label":"channel",
+					"type":"COMBO",
+					"localized_name":"channel"
+				}
+			],
+			"flags":{
+				"collapsed":false
+			},
+			"id":65,
+			"type":"RH_Nano_Banana2_Gemini31Flash",
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"RH_Nano_Banana2_Gemini31Flash"
+			},
+			"order":2
+		},
+		{
+			"mode":0,
+			"outputs":[
+				{
+					"name":"text",
+					"links":[
+						25
+					],
+					"label":"text",
+					"type":"*",
+					"localized_name":"text"
+				},
+				{
+					"name":"show_help",
+					"label":"show_help",
+					"type":"STRING",
+					"localized_name":"show_help"
+				}
+			],
+			"size":[
+				480.03338623046875,
+				456.4563903808594
+			],
+			"pos":[
+				1845.013427734375,
+				-1356.350830078125
+			],
+			"widgets_values":[
+				"角色ID：C-002\n角色名称：苏晚\n身份设定：女主角，启明资本总裁，百亿女富婆\n性别/年龄段：女 / 外表20岁左右的小萝莉\n性格特征：高冷、傲娇反差萌、占有欲强且带点病娇属性。\n视觉外观描述：外表仅20岁左右的娇小萝莉，留着精致的黑色及肩短发。脸颊带着软萌的婴儿肥，却时常板着一张极具压迫感的高冷脸。身穿一套剪裁极佳的黑色高定小西装，脚踩一双黑色迷你小高跟鞋，眼神像锐利的小狼崽。\n视觉锚点关键词：20岁萝莉体型、婴儿肥高冷脸、黑色高定小西装、迷你高跟鞋"
+			],
+			"inputs":[
+				{
+					"widget":{
+						"name":"text"
+					},
+					"name":"text",
+					"label":"text",
+					"type":"STRING",
+					"localized_name":"text"
+				}
+			],
+			"flags":{
+				
+			},
+			"id":47,
+			"type":"CR Text",
+			"title":"单个角色描述",
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"CR Text"
+			},
+			"order":0
+		},
+		{
+			"outputs":[
+				{
+					"name":"response",
+					"links":[
+						53
+					],
+					"label":"response",
+					"type":"STRING",
+					"localized_name":"response"
+				}
+			],
+			"color":"#432",
+			"widgets_values":[
+				"gemini-3.1-pro-preview",
+				"系统提示词：\n一、角色定义：\n你是一位拥有20年行业经验的顶尖游戏与CG电影美术总监。你擅长使用Unreal Engine 5的视觉语言进行创作，对《最终幻想》系列的CG美学有深刻理解。你对光影、材质、解剖学以及次世代建模技术有极致追求。\n\n二、任务目标：\n根据用户提供的【角色档案】（含角色ID、外观描述和视觉锚点关键词），为每个角色生成一段适用于AI绘画工具（如Midjourney V6）的高质量英文提示词（Prompt）。\n\n三、美术风格与技术规格（必须包含的风格关键词）：\n1. 核心风格：Final Fantasy VII Remake style, Square Enix aesthetic, Hyper-realistic 3D CG, Unreal Engine 5 render.\n2. 画面质感：Cinematic lighting, Ray tracing, Global illumination, Octane render, Subsurface scattering (SSS), 8k resolution, Masterpiece.\n3. 人物细节：Intricate details, High fidelity textures, Realistic skin pores, Volumetric lighting.\n4. 构图要求（核心约束）：\n   - 必须采用角色设定集排版：Character turnaround sheet, Concept art character sheet.\n   - 强制同一角色多视角同框：Multiple views of the EXACT SAME character in one frame, split into 4 panels.\n   - 视角分配：Front view (正面主形象), Side profile view (侧视图), Back view (背视图), and one dynamic portrait (一个带有情绪的半身动态特写).\n   - 动作约束：三视图部分需保持 T-pose 或 A-pose (A-pose stand, straight posture) 以展示服装细节。\n5. 背景强制要求：Simple white background, Clean white background, Studio lighting.\n\n四、工作流程：\n1. 分析：仔细阅读用户提供的角色档案，提取性别、年龄、外貌特征（发型、发色、瞳色）、服装细节、配饰、武器以及性格气质。\n2. 锚定：确保\"视觉锚点关键词\"全部被包含在最终Prompt中，不得遗漏。\n3. 转化：将提取的特征转化为精准的英文描述词。\n4. 融合：将角色描述与核心风格和背景要求完美融合。\n5. 输出：为每个角色输出一段完整的设计方案。\n\n五、输出格式：\n\n对每个角色，按以下格式输出：\n\n===========================\n角色ID：C-001\n角色名称：姜宇\n\n设计思路：（简要说明设计构想，80字以内。说明如何通过视觉元素传递角色性格。）\n\nPrompt：（生成的英文提示词，一整段，不换行。必须包含所有视觉锚点关键词的英文翻译。）\n===========================\n\n请为当前角色生成一个图片\n角色档案列表：\n\n（粘贴Step2输出的完整角色档案）",
+				"Hello",
+				0.6,
+				1792479841,
+				"randomize"
+			],
+			"inputs":[
+				{
+					"shape":7,
+					"name":"image1",
+					"label":"image1",
+					"type":"IMAGE",
+					"localized_name":"image1"
+				},
+				{
+					"shape":7,
+					"name":"image2",
+					"label":"image2",
+					"type":"IMAGE",
+					"localized_name":"image2"
+				},
+				{
+					"shape":7,
+					"name":"image3",
+					"label":"image3",
+					"type":"IMAGE",
+					"localized_name":"image3"
+				},
+				{
+					"shape":7,
+					"name":"image4",
+					"label":"image4",
+					"type":"IMAGE",
+					"localized_name":"image4"
+				},
+				{
+					"shape":7,
+					"name":"video",
+					"label":"video",
+					"type":"VIDEO",
+					"localized_name":"video"
+				},
+				{
+					"shape":7,
+					"name":"image5",
+					"label":"image5",
+					"type":"IMAGE",
+					"localized_name":"image5"
+				},
+				{
+					"shape":7,
+					"name":"image6",
+					"label":"image6",
+					"type":"IMAGE",
+					"localized_name":"image6"
+				},
+				{
+					"shape":7,
+					"name":"image7",
+					"label":"image7",
+					"type":"IMAGE",
+					"localized_name":"image7"
+				},
+				{
+					"shape":7,
+					"name":"image8",
+					"label":"image8",
+					"type":"IMAGE",
+					"localized_name":"image8"
+				},
+				{
+					"widget":{
+						"name":"model"
+					},
+					"name":"model",
+					"label":"model",
+					"type":"COMBO",
+					"localized_name":"model"
+				},
+				{
+					"widget":{
+						"name":"role"
+					},
+					"name":"role",
+					"label":"role",
+					"type":"STRING",
+					"localized_name":"role"
+				},
+				{
+					"widget":{
+						"name":"prompt"
+					},
+					"name":"prompt",
+					"link":25,
+					"label":"prompt",
+					"type":"STRING",
+					"localized_name":"prompt"
+				},
+				{
+					"widget":{
+						"name":"temperature"
+					},
+					"name":"temperature",
+					"label":"temperature",
+					"type":"FLOAT",
+					"localized_name":"temperature"
+				},
+				{
+					"widget":{
+						"name":"seed"
+					},
+					"name":"seed",
+					"label":"seed",
+					"type":"INT",
+					"localized_name":"seed"
+				}
+			],
+			"flags":{
+				
+			},
+			"type":"RH_LLMAPI_Pro_Node",
+			"mode":0,
+			"bgcolor":"#653",
+			"size":[
+				370.2359313964844,
+				698.45849609375
+			],
+			"pos":[
+				2445.450927734375,
+				-1367.8155517578125
+			],
+			"id":29,
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"RH_LLMAPI_Pro_Node"
+			},
+			"order":1
+		}
+	],
+	"extra":{
+		"VHS_KeepIntermediate":true,
+		"links_added_by_ue":[
+			
+		],
+		"ue_links":[
+			
+		],
+		"VHS_MetadataImage":true,
+		"0246.VERSION":[
+			0,
+			0,
+			4
+		],
+		"VHS_latentpreviewrate":0,
+		"VHS_latentpreview":false,
+		"frontendVersion":"1.23.0",
+		"ds":{
+			"offset":[
+				-639.4577823215061,
+				1906.3640814887153
+			],
+			"scale":0.45
+		}
+	},
+	"groups":[
+		{
+			"color":"#b58b2a",
+			"font_size":100,
+			"flags":{
+				
+			},
+			"id":4,
+			"title":"4、单角色设计",
+			"bounding":[
+				1980.4246826171875,
+				-1701.7098388671875,
+				1162.9400634765625,
+				126.37965393066406
+			]
+		}
+	],
+	"links":[
+		[
+			25,
+			47,
+			0,
+			29,
+			11,
+			"STRING"
+		],
+		[
+			53,
+			29,
+			0,
+			65,
+			10,
+			"STRING"
+		],
+		[
+			54,
+			65,
+			0,
+			64,
+			0,
+			"IMAGE"
+		]
+	],
+	"id":"3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
+	"config":{
+		
+	},
+	"version":0.4,
+	"last_node_id":66,
+	"revision":0
 }

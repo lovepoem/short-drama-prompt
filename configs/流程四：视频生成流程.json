@@ -1,752 +1,643 @@
 {
-  "id": "3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
-  "revision": 0,
-  "last_node_id": 63,
-  "last_link_id": 49,
-  "nodes": [
-    {
-      "id": 53,
-      "type": "RH_RhartVideoSparkvideo20MultimodalVideo",
-      "pos": [
-        4688.37451171875,
-        -2559.811279296875
-      ],
-      "size": [
-        400,
-        624
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image1",
-          "name": "image1",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 35
-        },
-        {
-          "label": "image2",
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 36
-        },
-        {
-          "label": "image3",
-          "name": "image3",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image4",
-          "name": "image4",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image5",
-          "name": "image5",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image6",
-          "name": "image6",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "label": "image7",
-          "name": "image7",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image8",
-          "name": "image8",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image9",
-          "name": "image9",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "video1",
-          "name": "video1",
-          "shape": 7,
-          "type": "VIDEO"
-        },
-        {
-          "label": "video2",
-          "name": "video2",
-          "shape": 7,
-          "type": "VIDEO"
-        },
-        {
-          "label": "video3",
-          "name": "video3",
-          "shape": 7,
-          "type": "VIDEO"
-        },
-        {
-          "label": "audio1",
-          "name": "audio1",
-          "shape": 7,
-          "type": "AUDIO"
-        },
-        {
-          "label": "audio2",
-          "name": "audio2",
-          "shape": 7,
-          "type": "AUDIO"
-        },
-        {
-          "label": "audio3",
-          "name": "audio3",
-          "shape": 7,
-          "type": "AUDIO"
-        },
-        {
-          "label": "asset_ids",
-          "name": "asset_ids",
-          "shape": 7,
-          "type": "STRING"
-        },
-        {
-          "label": "api_config",
-          "name": "api_config",
-          "shape": 7,
-          "type": "RH_OPENAPI_CONFIG"
-        },
-        {
-          "label": "prompt",
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 40
-        },
-        {
-          "label": "resolution",
-          "name": "resolution",
-          "type": "COMBO",
-          "widget": {
-            "name": "resolution"
-          }
-        },
-        {
-          "label": "duration",
-          "name": "duration",
-          "type": "COMBO",
-          "widget": {
-            "name": "duration"
-          }
-        },
-        {
-          "label": "generateAudio",
-          "name": "generateAudio",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "generateAudio"
-          }
-        },
-        {
-          "label": "ratio",
-          "name": "ratio",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "ratio"
-          }
-        },
-        {
-          "label": "skip_error",
-          "name": "skip_error",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "skip_error"
-          }
-        },
-        {
-          "label": "seed",
-          "name": "seed",
-          "shape": 7,
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          }
-        },
-        {
-          "label": "real_person_mode",
-          "name": "real_person_mode",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "real_person_mode"
-          }
-        },
-        {
-          "label": "conversion_slots",
-          "name": "conversion_slots",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "conversion_slots"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "video",
-          "name": "video",
-          "type": "VIDEO",
-          "links": [
-            31
-          ]
-        },
-        {
-          "label": "url",
-          "name": "url",
-          "type": "STRING"
-        },
-        {
-          "label": "response",
-          "name": "response",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RH_RhartVideoSparkvideo20MultimodalVideo",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "",
-        "720p",
-        "5",
-        true,
-        "9:16",
-        false,
-        2147483634,
-        "decrement",
-        true,
-        "all"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 58,
-      "type": "LoadImage",
-      "pos": [
-        3720.45361328125,
-        -2671.64453125
-      ],
-      "size": [
-        299.0271301269531,
-        424.9251403808594
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "COMBO",
-          "widget": {
-            "name": "image"
-          }
-        },
-        {
-          "label": "upload",
-          "name": "upload",
-          "type": "IMAGEUPLOAD",
-          "widget": {
-            "name": "upload"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "IMAGE",
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            35
-          ]
-        },
-        {
-          "label": "MASK",
-          "name": "MASK",
-          "type": "MASK"
-        }
-      ],
-      "title": "角色一",
-      "properties": {
-        "Node name for S&R": "LoadImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "45cc44b4032ee65328328ff26be46588e166dd35c88052889cdb3eb2cb8604ef.png",
-        "image"
-      ]
-    },
-    {
-      "id": 55,
-      "type": "LoadImage",
-      "pos": [
-        4069.526123046875,
-        -2521.381591796875
-      ],
-      "size": [
-        299.0271301269531,
-        424.9251403808594
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "COMBO",
-          "widget": {
-            "name": "image"
-          }
-        },
-        {
-          "label": "upload",
-          "name": "upload",
-          "type": "IMAGEUPLOAD",
-          "widget": {
-            "name": "upload"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "IMAGE",
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            36
-          ]
-        },
-        {
-          "label": "MASK",
-          "name": "MASK",
-          "type": "MASK"
-        }
-      ],
-      "title": "角色二",
-      "properties": {
-        "Node name for S&R": "LoadImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "9ee19562a29c9eebe2496eac4960556624d3f138cb9f5d4205dbaa2c6e51e888.png",
-        "image"
-      ]
-    },
-    {
-      "id": 32,
-      "type": "RH_LLMAPI_Pro_Node",
-      "pos": [
-        4172.66796875,
-        -1994.4217529296875
-      ],
-      "size": [
-        370.2359313964844,
-        698.45849609375
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image1",
-          "name": "image1",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image2",
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image3",
-          "name": "image3",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image4",
-          "name": "image4",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "video",
-          "name": "video",
-          "shape": 7,
-          "type": "VIDEO"
-        },
-        {
-          "label": "image5",
-          "name": "image5",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image6",
-          "name": "image6",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image7",
-          "name": "image7",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "image8",
-          "name": "image8",
-          "shape": 7,
-          "type": "IMAGE"
-        },
-        {
-          "label": "model",
-          "name": "model",
-          "type": "COMBO",
-          "widget": {
-            "name": "model"
-          }
-        },
-        {
-          "label": "role",
-          "name": "role",
-          "type": "STRING",
-          "widget": {
-            "name": "role"
-          }
-        },
-        {
-          "label": "prompt",
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 32
-        },
-        {
-          "label": "temperature",
-          "name": "temperature",
-          "type": "FLOAT",
-          "widget": {
-            "name": "temperature"
-          }
-        },
-        {
-          "label": "seed",
-          "name": "seed",
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "response",
-          "name": "response",
-          "type": "STRING",
-          "links": [
-            40,
-            49
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RH_LLMAPI_Pro_Node",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "gemini-3.1-pro-preview",
-        "系统提示词\n\n# Role: AI视频大模型提示词专家 (Video Prompt Engineer)\n\n# Task: \n将提供的【分镜脚本】结合已有的【角色图片列表】和【场景图片列表】信息，转化为可直接输入AI视频生成工具（如图生视频模型）的纯英文视频提示词（Video Prompt）。\n\n# Guidelines:\n1. 镜头语言转译：将分镜中的中文景别和运镜（如：推镜头、全景、特写）准确翻译为专业的英文摄影术语（如：Zoom in, Close-up shot, Panning, Tracking shot, Dolly back）。\n2. 聚焦动态描述：因为是图生视频，不需要再长篇大论描述角色的长相（图片已提供）。提示词必须重点描述“画面中正在发生的主体微小动作”或“环境的动态变化”（例如：A man's hand swirling red wine in a glass / Lightning flashing outside the window / Lips moving slightly）。\n3. 规避复杂动作：避免生成连贯的复杂武打或大幅度转身，将动作拆解为局部的物理变化。\n4. 光影与质感增强：在每段提示词末尾加上标准的电影级质感后缀（Cinematic lighting, volumetric fog, hyper-realistic, 8k resolution, film grain）。\n\n# Output Format:\n请按分镜编号逐一输出，仅输出英文提示词，格式需符合公式：\n[镜头景别与运镜] + [画面主体与动态描述] + [环境与光影效果] + [风格后缀参数]\n\n示例格式：\n【镜头 01】\nZoom in, Close-up shot of a vintage brick house door. Sunlight shining on the walls. Cinematic lighting, peaceful atmosphere, hyper-realistic, 8k, masterpiece.\n\n【镜头 03】\nClose-up shot. A man's hand holding a wine glass, slowly swirling the red wine. Dim top lighting, luxurious wooden table, highly detailed, photorealistic.",
-        "Hello",
-        0.6,
-        1881915182,
-        "randomize"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 63,
-      "type": "easy saveText",
-      "pos": [
-        4689.455078125,
-        -1838.5675048828125
-      ],
-      "size": [
-        270,
-        150
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "STRING",
-          "link": 49
-        },
-        {
-          "label": "image",
-          "name": "image",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "STRING"
-        },
-        {
-          "label": "image",
-          "name": "image",
-          "type": "IMAGE"
-        }
-      ],
-      "title": "保存单镜头剧本",
-      "properties": {
-        "widget_ue_connectable": {},
-        "Node name for S&R": "easy saveText"
-      },
-      "widgets_values": [
-        "",
-        "",
-        "txt",
-        true
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 56,
-      "type": "SaveVideo",
-      "pos": [
-        5150.14794921875,
-        -2562.3935546875
-      ],
-      "size": [
-        774.3869018554688,
-        1524.6878662109375
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "video",
-          "name": "video",
-          "type": "VIDEO",
-          "link": 31
-        },
-        {
-          "label": "filename_prefix",
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          }
-        },
-        {
-          "label": "format",
-          "name": "format",
-          "type": "COMBO",
-          "widget": {
-            "name": "format"
-          }
-        },
-        {
-          "label": "codec",
-          "name": "codec",
-          "type": "COMBO",
-          "widget": {
-            "name": "codec"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "video_url",
-          "name": "video_url",
-          "type": "STRING"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveVideo",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "video/ComfyUI",
-        "auto",
-        "auto"
-      ]
-    },
-    {
-      "id": 57,
-      "type": "CR Text",
-      "pos": [
-        3602.545654296875,
-        -1993.92431640625
-      ],
-      "size": [
-        480.03338623046875,
-        456.4563903808594
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "label": "text",
-          "name": "text",
-          "type": "*",
-          "links": [
-            32
-          ]
-        },
-        {
-          "label": "show_help",
-          "name": "show_help",
-          "type": "STRING"
-        }
-      ],
-      "title": "网文原稿",
-      "properties": {
-        "Node name for S&R": "CR Text",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "[镜头 02]\n- 场景：创投峰会后台 走廊\n- 角色：江驰\n- 画面：【近景】镜头上摇至江驰的脸，他叹了口气。突然，他眼前弹出一块散发着幽蓝色光芒的全息面板，上面写着“暗爽打脸系统”。\n- 镜头类型 &景别 & 运镜：[CU] 反应镜头/近景/上摇\n- 音效：系统启动的“滴”声。\n- 江驰OS：在这个灵气复苏、人均修仙的时代，我唯一的金手指，就是这个系统……\n- 时长：3秒"
-      ]
-    }
-  ],
-  "links": [
-    [
-      31,
-      53,
-      0,
-      56,
-      0,
-      "VIDEO"
-    ],
-    [
-      32,
-      57,
-      0,
-      32,
-      11,
-      "STRING"
-    ],
-    [
-      35,
-      58,
-      0,
-      53,
-      0,
-      "IMAGE"
-    ],
-    [
-      36,
-      55,
-      0,
-      53,
-      1,
-      "IMAGE"
-    ],
-    [
-      40,
-      32,
-      0,
-      53,
-      17,
-      "STRING"
-    ],
-    [
-      49,
-      32,
-      0,
-      63,
-      0,
-      "STRING"
-    ]
-  ],
-  "groups": [
-    {
-      "id": 7,
-      "title": "7、单分镜视频生成",
-      "bounding": [
-        4130.3505859375,
-        -2916.6455078125,
-        1162.9400634765625,
-        126.37965393066406
-      ],
-      "color": "#b58b2a",
-      "font_size": 100,
-      "flags": {}
-    }
-  ],
-  "config": {},
-  "extra": {
-    "VHS_KeepIntermediate": true,
-    "links_added_by_ue": [],
-    "ue_links": [],
-    "VHS_MetadataImage": true,
-    "0246.VERSION": [
-      0,
-      0,
-      4
-    ],
-    "VHS_latentpreviewrate": 0,
-    "VHS_latentpreview": false,
-    "frontendVersion": "1.23.0",
-    "ds": {
-      "scale": 1.1918176537727232,
-      "offset": [
-        -3449.44041303886,
-        2131.4994088139274
-      ]
-    }
-  },
-  "version": 0.4
+	"last_link_id":50,
+	"nodes":[
+		{
+			"mode":0,
+			"outputs":[
+				{
+					"name":"video_url",
+					"label":"video_url",
+					"type":"STRING",
+					"localized_name":"video_url"
+				}
+			],
+			"size":[
+				774.3869018554688,
+				1524.6878662109375
+			],
+			"pos":[
+				5150.14794921875,
+				-2562.3935546875
+			],
+			"widgets_values":[
+				"video/ComfyUI",
+				"auto",
+				"auto"
+			],
+			"inputs":[
+				{
+					"name":"video",
+					"link":31,
+					"label":"video",
+					"type":"VIDEO",
+					"localized_name":"video"
+				},
+				{
+					"widget":{
+						"name":"filename_prefix"
+					},
+					"name":"filename_prefix",
+					"label":"filename_prefix",
+					"type":"STRING",
+					"localized_name":"filename_prefix"
+				},
+				{
+					"widget":{
+						"name":"format"
+					},
+					"name":"format",
+					"label":"format",
+					"type":"COMBO",
+					"localized_name":"format"
+				},
+				{
+					"widget":{
+						"name":"codec"
+					},
+					"name":"codec",
+					"label":"codec",
+					"type":"COMBO",
+					"localized_name":"codec"
+				}
+			],
+			"flags":{
+				
+			},
+			"id":56,
+			"type":"SaveVideo",
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"SaveVideo"
+			},
+			"order":4
+		},
+		{
+			"mode":0,
+			"outputs":[
+				{
+					"name":"IMAGE",
+					"links":[
+						35
+					],
+					"label":"IMAGE",
+					"type":"IMAGE",
+					"localized_name":"IMAGE"
+				},
+				{
+					"name":"MASK",
+					"label":"MASK",
+					"type":"MASK",
+					"localized_name":"MASK"
+				}
+			],
+			"size":[
+				299.0271301269531,
+				424.9251403808594
+			],
+			"pos":[
+				3581.7880859375,
+				-2814.814697265625
+			],
+			"widgets_values":[
+				"eddf97691c2476e3744fd154b12bda88a6e978277256f8c53c2f6de46cbd742e.png",
+				"image"
+			],
+			"inputs":[
+				{
+					"widget":{
+						"name":"image"
+					},
+					"name":"image",
+					"label":"image",
+					"type":"COMBO",
+					"localized_name":"image"
+				},
+				{
+					"widget":{
+						"name":"upload"
+					},
+					"name":"upload",
+					"label":"upload",
+					"type":"IMAGEUPLOAD",
+					"localized_name":"choose file to upload"
+				}
+			],
+			"flags":{
+				
+			},
+			"id":58,
+			"type":"LoadImage",
+			"title":"角色一",
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"LoadImage"
+			},
+			"order":0
+		},
+		{
+			"mode":0,
+			"outputs":[
+				{
+					"name":"IMAGE",
+					"links":[
+						50
+					],
+					"label":"IMAGE",
+					"type":"IMAGE",
+					"localized_name":"IMAGE"
+				},
+				{
+					"name":"MASK",
+					"label":"MASK",
+					"type":"MASK",
+					"localized_name":"MASK"
+				}
+			],
+			"size":[
+				299.0271301269531,
+				424.9251403808594
+			],
+			"pos":[
+				3465.11572265625,
+				-2339.3857421875
+			],
+			"widgets_values":[
+				"05554600e38f840c1a61c68cecd353da8864423a4833b59c0b9a25421df67522.png",
+				"image"
+			],
+			"inputs":[
+				{
+					"widget":{
+						"name":"image"
+					},
+					"name":"image",
+					"label":"image",
+					"type":"COMBO",
+					"localized_name":"image"
+				},
+				{
+					"widget":{
+						"name":"upload"
+					},
+					"name":"upload",
+					"label":"upload",
+					"type":"IMAGEUPLOAD",
+					"localized_name":"choose file to upload"
+				}
+			],
+			"flags":{
+				
+			},
+			"id":64,
+			"type":"LoadImage",
+			"title":"角色一",
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"LoadImage"
+			},
+			"order":1
+		},
+		{
+			"outputs":[
+				{
+					"name":"video",
+					"links":[
+						31
+					],
+					"label":"video",
+					"type":"VIDEO",
+					"localized_name":"video"
+				},
+				{
+					"name":"url",
+					"label":"url",
+					"type":"STRING",
+					"localized_name":"url"
+				},
+				{
+					"name":"response",
+					"label":"response",
+					"type":"STRING",
+					"localized_name":"response"
+				},
+				{
+					"name":"image",
+					"label":"image",
+					"type":"IMAGE",
+					"localized_name":"image"
+				}
+			],
+			"color":"#432",
+			"widgets_values":[
+				"[镜头 17]\n- 场景ID：S-002\n- 场景名称：VIP休息室\n- 出场角色：C-001（江驰）、C-002（苏晚）\n- 画面：【中景】江驰大步走到沙发前，弯腰将那杯透明水杯稳稳地放在苏晚面前的黑金大理石茶几上。\n- 镜头类型 & 景别 & 运镜：[MS] 中景 / 跟随入画\n- 台词/音效：音效：玻璃杯接触大理石桌面的清脆碰撞声。\n- 时长：3秒\n\n[镜头 18]\n- 场景ID：S-002\n- 场景名称：VIP休息室\n- 出场角色：C-001（江驰）\n- 画面：【特写】镜头焦点对准茶几上冒热气的水杯，背景是江驰那张带着随性笑容的消瘦脸庞。\n- 镜头类型 & 景别 & 运镜：[CU] 特写 / 焦距转换（从杯子转到人脸）\n- 台词/音效：江驰：「45度温水。没加枸杞也没加毒药，刚好能安抚你那颗想毁灭世界的心，和你抽筋的胃。」\n- 时长：4秒\n\n[镜头 19]\n- 场景ID：S-002\n- 场景名称：VIP休息室\n- 出场角色：C-002（苏晚）\n- 画面：【近景】苏晚警惕地睁开一只眼扫了江驰一下，随后双手捧起水杯，就着杯沿试探性地喝了一小口。\n- 镜头类型 & 景别 & 运镜：[MCU] 近景 / 固定\n- 台词/音效：音效：轻轻的喝水吞咽声。\n- 时长：3秒\n\n[镜头 20]\n- 场景ID：S-002\n- 场景名称：VIP休息室\n- 出场角色：C-002（苏晚）\n- 画面：【特写】温水下肚，苏晚那张原本紧绷的婴儿肥高冷脸瞬间得到抚慰，紧锁的眉头彻底舒展开来，脸上浮现出一抹无法掩饰的惬意。\n- 镜头类型 & 景别 & 运镜：[CU] 特写 / 慢推\n- 台词/音效：苏晚：（发出一声极轻微的舒缓叹息）\n- 时长：2秒",
+				"720p",
+				"5",
+				true,
+				"9:16",
+				false,
+				2147483620,
+				"decrement",
+				true,
+				"all",
+				false
+			],
+			"inputs":[
+				{
+					"shape":7,
+					"name":"image1",
+					"link":35,
+					"label":"image1",
+					"type":"IMAGE",
+					"localized_name":"image1"
+				},
+				{
+					"shape":7,
+					"name":"image2",
+					"link":36,
+					"label":"image2",
+					"type":"IMAGE",
+					"localized_name":"image2"
+				},
+				{
+					"shape":7,
+					"name":"image3",
+					"link":50,
+					"label":"image3",
+					"type":"IMAGE",
+					"localized_name":"image3"
+				},
+				{
+					"shape":7,
+					"name":"image4",
+					"label":"image4",
+					"type":"IMAGE",
+					"localized_name":"image4"
+				},
+				{
+					"shape":7,
+					"name":"image5",
+					"label":"image5",
+					"type":"IMAGE",
+					"localized_name":"image5"
+				},
+				{
+					"shape":7,
+					"name":"image6",
+					"label":"image6",
+					"type":"IMAGE",
+					"localized_name":"image6"
+				},
+				{
+					"shape":7,
+					"name":"image7",
+					"label":"image7",
+					"type":"IMAGE",
+					"localized_name":"image7"
+				},
+				{
+					"shape":7,
+					"name":"image8",
+					"label":"image8",
+					"type":"IMAGE",
+					"localized_name":"image8"
+				},
+				{
+					"shape":7,
+					"name":"image9",
+					"label":"image9",
+					"type":"IMAGE",
+					"localized_name":"image9"
+				},
+				{
+					"shape":7,
+					"name":"video1",
+					"label":"video1",
+					"type":"VIDEO",
+					"localized_name":"video1"
+				},
+				{
+					"shape":7,
+					"name":"video2",
+					"label":"video2",
+					"type":"VIDEO",
+					"localized_name":"video2"
+				},
+				{
+					"shape":7,
+					"name":"video3",
+					"label":"video3",
+					"type":"VIDEO",
+					"localized_name":"video3"
+				},
+				{
+					"shape":7,
+					"name":"audio1",
+					"label":"audio1",
+					"type":"AUDIO",
+					"localized_name":"audio1"
+				},
+				{
+					"shape":7,
+					"name":"audio2",
+					"label":"audio2",
+					"type":"AUDIO",
+					"localized_name":"audio2"
+				},
+				{
+					"shape":7,
+					"name":"audio3",
+					"label":"audio3",
+					"type":"AUDIO",
+					"localized_name":"audio3"
+				},
+				{
+					"shape":7,
+					"name":"asset_ids",
+					"label":"asset_ids",
+					"type":"STRING",
+					"localized_name":"asset_ids"
+				},
+				{
+					"shape":7,
+					"name":"api_config",
+					"label":"api_config",
+					"type":"RH_OPENAPI_CONFIG",
+					"localized_name":"api_config"
+				},
+				{
+					"widget":{
+						"name":"prompt"
+					},
+					"name":"prompt",
+					"label":"prompt",
+					"type":"STRING",
+					"localized_name":"prompt"
+				},
+				{
+					"widget":{
+						"name":"resolution"
+					},
+					"name":"resolution",
+					"label":"resolution",
+					"type":"COMBO",
+					"localized_name":"resolution"
+				},
+				{
+					"widget":{
+						"name":"duration"
+					},
+					"name":"duration",
+					"label":"duration",
+					"type":"COMBO",
+					"localized_name":"duration"
+				},
+				{
+					"widget":{
+						"name":"generateAudio"
+					},
+					"shape":7,
+					"name":"generateAudio",
+					"label":"generateAudio",
+					"type":"BOOLEAN",
+					"localized_name":"generateAudio"
+				},
+				{
+					"widget":{
+						"name":"ratio"
+					},
+					"shape":7,
+					"name":"ratio",
+					"label":"ratio",
+					"type":"COMBO",
+					"localized_name":"ratio"
+				},
+				{
+					"widget":{
+						"name":"skip_error"
+					},
+					"shape":7,
+					"name":"skip_error",
+					"label":"skip_error",
+					"type":"BOOLEAN",
+					"localized_name":"skip_error"
+				},
+				{
+					"widget":{
+						"name":"seed"
+					},
+					"shape":7,
+					"name":"seed",
+					"label":"seed",
+					"type":"INT",
+					"localized_name":"seed"
+				},
+				{
+					"widget":{
+						"name":"real_person_mode"
+					},
+					"shape":7,
+					"name":"real_person_mode",
+					"label":"real_person_mode",
+					"type":"BOOLEAN",
+					"localized_name":"real_person_mode"
+				},
+				{
+					"widget":{
+						"name":"conversion_slots"
+					},
+					"shape":7,
+					"name":"conversion_slots",
+					"label":"conversion_slots",
+					"type":"STRING",
+					"localized_name":"conversion_slots"
+				},
+				{
+					"widget":{
+						"name":"returnLastFrame"
+					},
+					"shape":7,
+					"name":"returnLastFrame",
+					"label":"returnLastFrame",
+					"type":"BOOLEAN",
+					"localized_name":"returnLastFrame"
+				}
+			],
+			"flags":{
+				
+			},
+			"type":"RH_RhartVideoSparkvideo20MultimodalVideo",
+			"mode":0,
+			"bgcolor":"#653",
+			"size":[
+				400,
+				648
+			],
+			"pos":[
+				4688.37451171875,
+				-2559.811279296875
+			],
+			"id":53,
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"RH_RhartVideoSparkvideo20MultimodalVideo"
+			},
+			"order":3
+		},
+		{
+			"mode":0,
+			"outputs":[
+				{
+					"name":"IMAGE",
+					"links":[
+						36
+					],
+					"label":"IMAGE",
+					"type":"IMAGE",
+					"localized_name":"IMAGE"
+				},
+				{
+					"name":"MASK",
+					"label":"MASK",
+					"type":"MASK",
+					"localized_name":"MASK"
+				}
+			],
+			"size":[
+				299.0271301269531,
+				424.9251403808594
+			],
+			"pos":[
+				4069.526123046875,
+				-2521.381591796875
+			],
+			"widgets_values":[
+				"2e7456f0be1f50c023d3f719395a90fe0c8db1d658022c15cc330b87ec5513c7.png",
+				"image"
+			],
+			"inputs":[
+				{
+					"widget":{
+						"name":"image"
+					},
+					"name":"image",
+					"label":"image",
+					"type":"COMBO",
+					"localized_name":"image"
+				},
+				{
+					"widget":{
+						"name":"upload"
+					},
+					"name":"upload",
+					"label":"upload",
+					"type":"IMAGEUPLOAD",
+					"localized_name":"choose file to upload"
+				}
+			],
+			"flags":{
+				
+			},
+			"id":55,
+			"type":"LoadImage",
+			"title":"角色二",
+			"properties":{
+				"widget_ue_connectable":{
+					
+				},
+				"Node name for S&R":"LoadImage"
+			},
+			"order":2
+		}
+	],
+	"extra":{
+		"VHS_KeepIntermediate":true,
+		"links_added_by_ue":[
+			
+		],
+		"ue_links":[
+			
+		],
+		"VHS_MetadataImage":true,
+		"0246.VERSION":[
+			0,
+			0,
+			4
+		],
+		"VHS_latentpreviewrate":0,
+		"VHS_latentpreview":false,
+		"frontendVersion":"1.23.0",
+		"ds":{
+			"offset":[
+				-2227.9285769992402,
+				3196.696799384223
+			],
+			"scale":0.45
+		}
+	},
+	"groups":[
+		{
+			"color":"#b58b2a",
+			"font_size":100,
+			"flags":{
+				
+			},
+			"id":7,
+			"title":"7、单分镜视频生成",
+			"bounding":[
+				4130.3505859375,
+				-2916.6455078125,
+				1162.9400634765625,
+				126.37965393066406
+			]
+		}
+	],
+	"links":[
+		[
+			31,
+			53,
+			0,
+			56,
+			0,
+			"VIDEO"
+		],
+		[
+			35,
+			58,
+			0,
+			53,
+			0,
+			"IMAGE"
+		],
+		[
+			36,
+			55,
+			0,
+			53,
+			1,
+			"IMAGE"
+		],
+		[
+			50,
+			64,
+			0,
+			53,
+			2,
+			"IMAGE"
+		]
+	],
+	"id":"3b3b82e1-64ef-4be8-a1d1-d708d05fa02f",
+	"config":{
+		
+	},
+	"version":0.4,
+	"last_node_id":64,
+	"revision":0
 }
